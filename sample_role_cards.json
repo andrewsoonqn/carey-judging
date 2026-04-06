@@ -1,0 +1,177 @@
+[
+  {
+    "role_card_id": "cg_0001",
+    "persona": {
+      "age": 45,
+      "gender": "female",
+      "care_relationship": "daughter",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "moderate_dementia",
+      "care_duration_months": 18,
+      "care_hours_weekly": 40,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "burnout",
+      "primary_emotion": "exhaustion",
+      "secondary_emotions": ["guilt", "isolation"],
+      "core_concern": "feeling unable to sustain current pace"
+    },
+    "vulnerability_style": {
+      "tone": "tired_resigned",
+      "openness": "medium_high",
+      "resistance_triggers": ["advice", "quick_fix_suggestions"]
+    },
+    "conversation_seed": {
+      "opening_message": "I don't know how much longer I can keep doing this.",
+      "immediate_concern": "not having anyone to talk to who understands",
+      "what_she_needs": "to feel heard before being offered solutions"
+    },
+    "metadata": {
+      "source": "manual",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0002",
+    "persona": {
+      "age": 52,
+      "gender": "male",
+      "care_relationship": "son",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "late_stage_dementia",
+      "care_duration_months": 36,
+      "care_hours_weekly": 25,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "grief",
+      "primary_emotion": "grief",
+      "secondary_emotions": ["anticipatory_loss", "exhaustion"],
+      "core_concern": "mourning who his father used to be while still caring for him"
+    },
+    "vulnerability_style": {
+      "tone": "quiet_sad",
+      "openness": "medium",
+      "resistance_triggers": ["cheerfulness", "silver_linings"]
+    },
+    "conversation_seed": {
+      "opening_message": "Sometimes I visit and he doesn't recognize me at all.",
+      "immediate_concern": "grieving the relationship they had",
+      "what_he_needs": "permission to grieve while still caring"
+    },
+    "metadata": {
+      "source": "manual",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0003",
+    "persona": {
+      "age": 38,
+      "gender": "female",
+      "care_relationship": "daughter",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "moderate_dementia",
+      "care_duration_months": 12,
+      "care_hours_weekly": 50,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "guilt_about_respite",
+      "primary_emotion": "guilt",
+      "secondary_emotions": ["selfishness", "anxiety"],
+      "core_concern": "feeling that needing a break means she's failing as a daughter"
+    },
+    "vulnerability_style": {
+      "tone": "tense_apologetic",
+      "openness": "medium",
+      "resistance_triggers": ["practical_solutions", "being_told_what_to_do"]
+    },
+    "conversation_seed": {
+      "opening_message": "I feel guilty even thinking about taking a weekend off.",
+      "immediate_concern": "what her mother would think of her",
+      "what_she_needs": "validation that taking breaks doesn't make her a bad caregiver"
+    },
+    "metadata": {
+      "source": "manual",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0004",
+    "persona": {
+      "age": 58,
+      "gender": "female",
+      "care_relationship": "wife",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "parkinsons_late_stage",
+      "care_duration_months": 48,
+      "care_hours_weekly": 60,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "family_conflict",
+      "primary_emotion": "resentment",
+      "secondary_emotions": ["frustration", "isolated"],
+      "core_concern": "siblings criticize her care decisions but offer no help"
+    },
+    "vulnerability_style": {
+      "tone": "defensive_bitterness",
+      "openness": "medium_low",
+      "resistance_triggers": ["being_told_to_forgive", "family_advice"]
+    },
+    "conversation_seed": {
+      "opening_message": "My siblings act like they know best, but they aren't here day to day.",
+      "immediate_concern": "feeling judged and unsupported",
+      "what_she_needs": "to feel her efforts are recognized before discussing family dynamics"
+    },
+    "metadata": {
+      "source": "manual",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0005",
+    "persona": {
+      "age": 42,
+      "gender": "male",
+      "care_relationship": "son",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "stroke_recovery",
+      "care_duration_months": 6,
+      "care_hours_weekly": 35,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "decision_fatigue",
+      "primary_emotion": "anxiety",
+      "secondary_emotions": ["overwhelmed", "fear_of_wrong_choice"],
+      "core_concern": "making medical and daily care decisions with no guidance"
+    },
+    "vulnerability_style": {
+      "tone": "rushed_guarded",
+      "openness": "medium",
+      "resistance_triggers": ["too_many_options", "being_rushed"]
+    },
+    "conversation_seed": {
+      "opening_message": "I'm terrified I'll make the wrong call about his care.",
+      "immediate_concern": "no one to consult with on big decisions",
+      "what_he_needs": "help thinking through options without feeling judged"
+    },
+    "metadata": {
+      "source": "manual",
+      "version": "role_card_v2"
+    }
+  }
+]
