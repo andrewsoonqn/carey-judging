@@ -118,10 +118,13 @@ class SimpleVictimAgent:
 
     def reply(self, role_card: dict[str, Any], transcript: list[dict[str, Any]]) -> str:
         friend_text = _last_message(transcript, "friend")["text"]
-        issue = role_card["situation"]["current_issue"]
-        context = role_card["situation"].get("context", "")
-        feelings = role_card["conversation_seed"].get("core_feelings", [])
-        themes = role_card["conversation_seed"].get("likely_themes", [])
+        scenario = role_card.get("scenario", {})
+        issue = scenario.get("type", "unknown")
+        context = role_card.get("care_details", {}).get("recipient_condition", "")
+        feelings = role_card.get("conversation_seed", {}).get(
+            "core_feelings", []
+        ) or scenario.get("secondary_emotions", [])
+        themes = scenario.get("core_concern", "")
         seed = f"{role_card['role_card_id']}|{len(transcript)}|{friend_text}"
         feeling = _pick(feelings or ["stuck"], seed)
         theme = _pick(themes or [issue], seed)
