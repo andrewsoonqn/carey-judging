@@ -8,7 +8,7 @@ from pipeline.analysis import analyze_run
 
 
 BASE_DIR = Path(__file__).resolve().parent
-RUN_ID = os.environ.get("PIPELINE_RUN_ID", "run_demo_batch")
+RUN_ID = os.environ.get("PIPELINE_RUN_ID", "run_demo_simple")
 
 
 def main() -> None:
