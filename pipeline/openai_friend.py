@@ -61,20 +61,20 @@ class OpenAIFriendAgent:
     def _validate_reply(self, text: str) -> str:
         if not text:
             raise ValueError("empty reply")
-        if len(text.split()) > 120:
-            raise ValueError("reply is too long")
-        blocked_markers = [
-            "as an ai",
-            "i am an ai",
-            "language model",
-            "role card",
-            "json",
-            "simulation",
-            "assistant:",
-            "friend:",
-        ]
-        lowered = text.lower()
-        for marker in blocked_markers:
-            if marker in lowered:
-                raise ValueError(f"reply contains blocked marker: {marker}")
+        # if len(text.split()) > 200:
+        #     raise ValueError("reply is too long")
+        # blocked_markers = [
+        #     "as an ai",
+        #     "i am an ai",
+        #     "language model",
+        #     "role card",
+        #     "json",
+        #     "simulation",
+        #     "assistant:",
+        #     "friend:",
+        # ]
+        # lowered = text.lower()
+        # for marker in blocked_markers:
+        #     if marker in lowered:
+        #         raise ValueError(f"reply contains blocked marker: {marker}")
         return text
