@@ -11,7 +11,7 @@ from .openai_client import OpenAIChatClient
 class OpenAIVictimAgent:
     name: str = "openai_victim"
     version: str = "victim_openai_v1"
-    model: str = "gpt-4.1-mini"
+    model: str = "gpt-5.4-mini"
     base_url: str = "https://api.openai.com/v1"
     timeout_seconds: int = 60
     temperature: float = 0.7
