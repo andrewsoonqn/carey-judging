@@ -25,7 +25,7 @@ class OpenAITurnTagger:
     name: str = "openai_tagger"
     version: str = "tagger_openai_v1"
     taxonomy_version: str = "taxonomy_v1"
-    model: str = "gpt-5.4-mini"
+    model: str = "gpt-5.4-nano"
     base_url: str = "https://api.openai.com/v1"
     timeout_seconds: int = 60
     max_validation_retries: int = 2
