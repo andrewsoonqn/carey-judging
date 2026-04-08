@@ -23,7 +23,10 @@ class QwenCaregiverFriendAgent:
         if not Path(model_path).is_absolute():
             model_path = str(Path(__file__).resolve().parent.parent / model_path)
 
-        tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
+        tokenizer = AutoTokenizer.from_pretrained(
+            self.base_model,
+            trust_remote_code=True,
+        )
         base = AutoModelForCausalLM.from_pretrained(
             self.base_model,
             torch_dtype="auto",
