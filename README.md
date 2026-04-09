@@ -7,7 +7,7 @@ Right now it uses simple deterministic stub components instead of AI calls, but 
 ## What This Repo Does
 
 - stores structured role cards
-- simulates short 3-turn victim/friend conversations
+- simulates victim/friend conversations (default 10 turns per side)
 - saves raw transcripts as JSON
 - tags only the friend turns with structure and strategy labels
 - writes per-conversation tag JSON artifacts
@@ -24,15 +24,26 @@ role card
   -> tag file saved to tags/conv_xxxx.tags.json
 ```
 
+## Layout
+
+- `pipeline/` - core library (runner, tagger, agents, interfaces)
+- `scripts/` - runnable entrypoints (dry runs, analysis, REPL)
+- `docs/` - taxonomy, schemas, artifact layout
+- `data/` - fixtures such as exported sample role cards
+- `hpc/` - cluster job scripts (SLURM)
+
 ## Key Files
 
 - `README.md` - this guide
-- `foundation-spec.md` - design decisions for role cards, prompts, stop rules, and transcript schema
-- `tagging-taxonomy.md` - structure/strategy label definitions
-- `tagging-output-schema.md` - schema for tag artifacts
-- `run-artifact-layout.md` - recommended run directory layout
-- `sample_role_cards.json` - 5 example role cards in the new schema
-- `dry_run_pipeline.py` - simplest end-to-end demo script
+- `docs/foundation-spec.md` - design decisions for role cards, prompts, stop rules, and transcript schema
+- `docs/tagging-taxonomy.md` - structure/strategy label definitions
+- `docs/tagging-output-schema.md` - schema for tag artifacts
+- `docs/run-artifact-layout.md` - recommended run directory layout
+- `data/sample_role_cards.json` - 100 role cards (`cg_0001`–`cg_0100`; first five hand-authored, rest generated)
+- `pipeline/role_cards.py` - canonical cards and generator; run `python3 pipeline/role_cards.py` to refresh the JSON
+- `pipeline/defaults.py` - shared defaults such as max turns per side
+- `pipeline/run_support.py` - shared dry-run directory setup and batch loop
+- `scripts/dry_run_pipeline.py` - simplest end-to-end demo script
 - `pipeline/interfaces.py` - swap points for victim, friend, and tagger implementations
 - `pipeline/runner.py` - conversation generation and transcript writing
 - `pipeline/tagger.py` - transcript tagging and tag validation
@@ -62,7 +73,7 @@ What it does:
 
 - starts with the victim opening message from the role card
 - alternates friend/victim turns
-- stops after 3 friend turns
+- stops after 10 friend turns (override with `max_turns_per_side`)
 - writes a transcript JSON artifact
 
 This file does not know whether the agents are heuristic or AI-backed.
@@ -97,7 +108,7 @@ These are intentionally basic. They let you dry-run the pipeline without any AI 
 From the repo root:
 
 ```bash
-python3 dry_run_pipeline.py
+python3 scripts/dry_run_pipeline.py
 ```
 
 This will create:
@@ -180,7 +191,7 @@ class AITurnTagger:
         }
 ```
 
-Then wire those classes into `dry_run_pipeline.py` or a future batch runner.
+Then wire those classes into `scripts/dry_run_pipeline.py` or a future batch runner.
 
 ## Role Card Schema
 
@@ -234,7 +245,7 @@ Each generated conversation file contains:
 - stop reason
 - ordered `messages`
 
-See `foundation-spec.md` for the full schema.
+See `docs/foundation-spec.md` for the full schema.
 
 ## Tagging Format
 
@@ -247,7 +258,7 @@ Each tag file contains:
 - primary strategy
 - optional secondary strategies
 
-See `tagging-output-schema.md` for the full schema.
+See `docs/tagging-output-schema.md` for the full schema.
 
 ## Current Limitations
 
@@ -266,8 +277,7 @@ See `tagging-output-schema.md` for the full schema.
 
 ## Related Docs
 
-- `foundation-spec.md`
-- `tagging-taxonomy.md`
-- `tagging-output-schema.md`
-- `run-artifact-layout.md`
-- `to-do.md`
+- `docs/foundation-spec.md`
+- `docs/tagging-taxonomy.md`
+- `docs/tagging-output-schema.md`
+- `docs/run-artifact-layout.md`
