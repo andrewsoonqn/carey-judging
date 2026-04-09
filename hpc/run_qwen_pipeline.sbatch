@@ -36,7 +36,7 @@ trap finish EXIT
 PROJECT_DIR="${PROJECT_DIR:-/home/a/andrewsq/dev/judging}"
 LOG_DIR="${LOG_DIR:-${PROJECT_DIR}/logs}"
 VENV_DIR="${VENV_DIR:-${PROJECT_DIR}/.venv}"
-PIPELINE_CMD="${PIPELINE_CMD:-python -u dry_run_qwen.py}"
+PIPELINE_CMD="${PIPELINE_CMD:-python -u scripts/dry_run_qwen.py}"
 
 # Optional module names. Override at submit time if your cluster uses modules.
 CUDA_MODULE="${CUDA_MODULE:-}"
@@ -96,7 +96,7 @@ fi
 source "${VENV_DIR}/bin/activate"
 
 if [[ -z "${OPENAI_API_KEY:-}" ]]; then
-  echo "ERROR: OPENAI_API_KEY is not set. dry_run_qwen.py uses OpenAI victim and tagger components." >&2
+  echo "ERROR: OPENAI_API_KEY is not set. scripts/dry_run_qwen.py uses OpenAI victim and tagger components." >&2
   exit 1
 fi
 
