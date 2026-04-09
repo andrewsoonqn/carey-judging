@@ -86,7 +86,7 @@ def run_tagged_conversations(
         transcript_path = conversations_dir / f"{conversation_id}.json"
         tag_path = tags_dir / f"{conversation_id}.tags.json"
         if verbose:
-            print(f"Running {conversation_id}...")
+            print(f"Running {conversation_id}...", flush=True)
         run_conversation(
             role_card=role_card,
             output_path=transcript_path,
@@ -100,7 +100,10 @@ def run_tagged_conversations(
             transcript_path=transcript_path, output_path=tag_path, tagger=turn_tagger
         )
         if verbose:
-            print(f"  -> completed ({transcript_path.stat().st_size} bytes)")
+            print(
+                f"  -> completed ({transcript_path.stat().st_size} bytes)",
+                flush=True,
+            )
 
 
 def execute_timestamped_tagged_run(
@@ -143,7 +146,7 @@ def execute_timestamped_tagged_run(
         max_turns_per_side=max_turns_per_side,
     )
     n = len(role_cards)
-    print(f"Run directory: {run_dir.resolve()}")
-    print(f"Wrote {n} conversations to {run_dir / 'conversations'}")
-    print(f"Wrote {n} tag files to {run_dir / 'tags'}")
+    print(f"Run directory: {run_dir.resolve()}", flush=True)
+    print(f"Wrote {n} conversations to {run_dir / 'conversations'}", flush=True)
+    print(f"Wrote {n} tag files to {run_dir / 'tags'}", flush=True)
     return run_dir

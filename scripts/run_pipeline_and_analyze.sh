@@ -38,17 +38,17 @@ if [[ -f "${REPO_ROOT}/.env" ]]; then
   set +a
 fi
 
-OUT="$(python "${RUN_SCRIPT}" 2>&1)" || {
-  printf '%s\n' "${OUT}"
-  exit 1
-}
-printf '%s\n' "${OUT}"
+LOG_FILE="$(mktemp)"
+trap 'rm -f "${LOG_FILE}"' EXIT
+
+echo "Starting ${MODE} pipeline (streaming; this can take a long time for many role cards)..." >&2
+python -u "${RUN_SCRIPT}" 2>&1 | tee "${LOG_FILE}"
 
 RUN_ID=""
 while IFS= read -r line; do
   [[ "${line}" == Run\ directory:* ]] || continue
   RUN_ID="$(basename "${line#Run directory: }")"
-done <<< "${OUT}"
+done < "${LOG_FILE}"
 
 if [[ -z "${RUN_ID}" ]]; then
   echo "ERROR: could not parse run id from pipeline output (expected a 'Run directory:' line)" >&2
@@ -56,4 +56,5 @@ if [[ -z "${RUN_ID}" ]]; then
 fi
 
 export PIPELINE_RUN_ID="${RUN_ID}"
-python "${SCRIPT_DIR}/analyze_run.py"
+echo "Analyzing ${RUN_ID}..." >&2
+python -u "${SCRIPT_DIR}/analyze_run.py"
