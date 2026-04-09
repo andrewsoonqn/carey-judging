@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from .defaults import DEFAULT_MAX_TURNS_PER_SIDE
 from .interfaces import FriendAgent, RoleCard, VictimAgent
 
 
@@ -24,7 +25,7 @@ def run_conversation(
     friend_agent: FriendAgent,
     run_id: str,
     conversation_id: str,
-    max_turns_per_side: int = 3,
+    max_turns_per_side: int = DEFAULT_MAX_TURNS_PER_SIDE,
 ) -> dict[str, Any]:
     messages: list[dict[str, Any]] = []
 

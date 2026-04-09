@@ -127,7 +127,7 @@ class SimpleVictimAgent:
         themes = scenario.get("core_concern", "")
         seed = f"{role_card['role_card_id']}|{len(transcript)}|{friend_text}"
         feeling = _pick(feelings or ["stuck"], seed)
-        theme = _pick(themes or [issue], seed)
+        theme = _pick([themes] if themes else [issue], seed)
 
         if _contains_question(friend_text):
             return self._answer_question(
