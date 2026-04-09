@@ -43,7 +43,7 @@ role card
 - `pipeline/role_cards.py` - canonical cards and generator; run `python3 pipeline/role_cards.py` to refresh the JSON
 - `pipeline/defaults.py` - shared defaults such as max turns per side
 - `pipeline/run_support.py` - shared dry-run directory setup and batch loop
-- `scripts/dry_run_pipeline.py` - simplest end-to-end demo script
+- `scripts/dry_run_pipeline.py` - simplest end-to-end demo script (stub agents)
 - `pipeline/interfaces.py` - swap points for victim, friend, and tagger implementations
 - `pipeline/runner.py` - conversation generation and transcript writing
 - `pipeline/tagger.py` - transcript tagging and tag validation
@@ -191,7 +191,7 @@ class AITurnTagger:
         }
 ```
 
-Then wire those classes into `scripts/dry_run_pipeline.py` or a future batch runner.
+Then wire those classes into `scripts/dry_run_pipeline.py`, `scripts/run_openai.py`, `scripts/run_qwen.py`, or a future batch runner.
 
 ## Role Card Schema
 

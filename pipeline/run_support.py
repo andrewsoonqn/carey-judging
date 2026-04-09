@@ -1,10 +1,15 @@
 from __future__ import annotations
 
 import json
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
 from .defaults import DEFAULT_MAX_TURNS_PER_SIDE
+
+
+def timestamped_run_id(prefix: str) -> str:
+    return f"{prefix}_{datetime.now().strftime('%Y%m%d_%H%M%S_%f')}"
 
 
 def write_text(path: Path, text: str) -> None:
@@ -96,3 +101,49 @@ def run_tagged_conversations(
         )
         if verbose:
             print(f"  -> completed ({transcript_path.stat().st_size} bytes)")
+
+
+def execute_timestamped_tagged_run(
+    base_dir: Path,
+    run_prefix: str,
+    role_cards: list[dict[str, Any]],
+    *,
+    victim_agent_key: str,
+    friend_agent_key: str,
+    tagger_key: str,
+    victim_prompt: str,
+    friend_prompt: str,
+    victim_agent: Any,
+    friend_agent: Any,
+    turn_tagger: Any,
+    verbose: bool = False,
+    max_turns_per_side: int | None = None,
+) -> Path:
+    run_id = timestamped_run_id(run_prefix)
+    run_dir = base_dir / "runs" / run_id
+    write_run_tree(
+        run_dir,
+        run_id=run_id,
+        victim_agent_key=victim_agent_key,
+        friend_agent_key=friend_agent_key,
+        tagger_key=tagger_key,
+        victim_prompt=victim_prompt,
+        friend_prompt=friend_prompt,
+        role_cards=role_cards,
+        max_turns_per_side=max_turns_per_side,
+    )
+    run_tagged_conversations(
+        run_dir,
+        run_id,
+        role_cards,
+        victim_agent,
+        friend_agent,
+        turn_tagger,
+        verbose=verbose,
+        max_turns_per_side=max_turns_per_side,
+    )
+    n = len(role_cards)
+    print(f"Run directory: {run_dir.resolve()}")
+    print(f"Wrote {n} conversations to {run_dir / 'conversations'}")
+    print(f"Wrote {n} tag files to {run_dir / 'tags'}")
+    return run_dir
