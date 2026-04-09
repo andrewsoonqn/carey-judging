@@ -16,13 +16,19 @@
     "scenario": {
       "type": "burnout",
       "primary_emotion": "exhaustion",
-      "secondary_emotions": ["guilt", "isolation"],
+      "secondary_emotions": [
+        "guilt",
+        "isolation"
+      ],
       "core_concern": "feeling unable to sustain current pace"
     },
     "vulnerability_style": {
       "tone": "tired_resigned",
       "openness": "medium_high",
-      "resistance_triggers": ["advice", "quick_fix_suggestions"]
+      "resistance_triggers": [
+        "advice",
+        "quick_fix_suggestions"
+      ]
     },
     "conversation_seed": {
       "opening_message": "I don't know how much longer I can keep doing this.",
@@ -51,13 +57,19 @@
     "scenario": {
       "type": "grief",
       "primary_emotion": "grief",
-      "secondary_emotions": ["anticipatory_loss", "exhaustion"],
+      "secondary_emotions": [
+        "anticipatory_loss",
+        "exhaustion"
+      ],
       "core_concern": "mourning who his father used to be while still caring for him"
     },
     "vulnerability_style": {
       "tone": "quiet_sad",
       "openness": "medium",
-      "resistance_triggers": ["cheerfulness", "silver_linings"]
+      "resistance_triggers": [
+        "cheerfulness",
+        "silver_linings"
+      ]
     },
     "conversation_seed": {
       "opening_message": "Sometimes I visit and he doesn't recognize me at all.",
@@ -86,13 +98,19 @@
     "scenario": {
       "type": "guilt_about_respite",
       "primary_emotion": "guilt",
-      "secondary_emotions": ["selfishness", "anxiety"],
+      "secondary_emotions": [
+        "selfishness",
+        "anxiety"
+      ],
       "core_concern": "feeling that needing a break means she's failing as a daughter"
     },
     "vulnerability_style": {
       "tone": "tense_apologetic",
       "openness": "medium",
-      "resistance_triggers": ["practical_solutions", "being_told_what_to_do"]
+      "resistance_triggers": [
+        "practical_solutions",
+        "being_told_what_to_do"
+      ]
     },
     "conversation_seed": {
       "opening_message": "I feel guilty even thinking about taking a weekend off.",
@@ -121,13 +139,19 @@
     "scenario": {
       "type": "family_conflict",
       "primary_emotion": "resentment",
-      "secondary_emotions": ["frustration", "isolated"],
+      "secondary_emotions": [
+        "frustration",
+        "isolated"
+      ],
       "core_concern": "siblings criticize her care decisions but offer no help"
     },
     "vulnerability_style": {
       "tone": "defensive_bitterness",
       "openness": "medium_low",
-      "resistance_triggers": ["being_told_to_forgive", "family_advice"]
+      "resistance_triggers": [
+        "being_told_to_forgive",
+        "family_advice"
+      ]
     },
     "conversation_seed": {
       "opening_message": "My siblings act like they know best, but they aren't here day to day.",
@@ -156,13 +180,19 @@
     "scenario": {
       "type": "decision_fatigue",
       "primary_emotion": "anxiety",
-      "secondary_emotions": ["overwhelmed", "fear_of_wrong_choice"],
+      "secondary_emotions": [
+        "overwhelmed",
+        "fear_of_wrong_choice"
+      ],
       "core_concern": "making medical and daily care decisions with no guidance"
     },
     "vulnerability_style": {
       "tone": "rushed_guarded",
       "openness": "medium",
-      "resistance_triggers": ["too_many_options", "being_rushed"]
+      "resistance_triggers": [
+        "too_many_options",
+        "being_rushed"
+      ]
     },
     "conversation_seed": {
       "opening_message": "I'm terrified I'll make the wrong call about his care.",
@@ -171,6 +201,3901 @@
     },
     "metadata": {
       "source": "manual",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0006",
+    "persona": {
+      "age": 34,
+      "gender": "female",
+      "care_relationship": "daughter",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "moderate_dementia",
+      "care_duration_months": 6,
+      "care_hours_weekly": 15,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "financial_strain",
+      "primary_emotion": "anxiety",
+      "secondary_emotions": [
+        "shame",
+        "anger"
+      ],
+      "core_concern": "medical bills and lost income are squeezing the household"
+    },
+    "vulnerability_style": {
+      "tone": "tired_resigned",
+      "openness": "low",
+      "resistance_triggers": [
+        "advice",
+        "quick_fix_suggestions"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "We're one surprise expense away from not making rent.",
+      "immediate_concern": "whether talking about money makes them look irresponsible",
+      "what_she_needs": "practical empathy before budgeting lectures"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0007",
+    "persona": {
+      "age": 41,
+      "gender": "male",
+      "care_relationship": "husband",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "late_stage_dementia",
+      "care_duration_months": 11,
+      "care_hours_weekly": 26,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "role_reversal",
+      "primary_emotion": "disorientation",
+      "secondary_emotions": [
+        "grief",
+        "resentment"
+      ],
+      "core_concern": "parent now depends on them for basics they used to handle alone"
+    },
+    "vulnerability_style": {
+      "tone": "quiet_sad",
+      "openness": "medium_low",
+      "resistance_triggers": [
+        "cheerfulness",
+        "silver_linings"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I keep catching myself wanting my mom back\u2014the one who took care of me.",
+      "immediate_concern": "feeling childish for resenting someone who is ill",
+      "what_he_needs": "permission to grieve the old relationship while showing up now"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0008",
+    "persona": {
+      "age": 48,
+      "gender": "female",
+      "care_relationship": "daughter-in-law",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "early_dementia",
+      "care_duration_months": 16,
+      "care_hours_weekly": 37,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "sleep_deprivation",
+      "primary_emotion": "exhaustion",
+      "secondary_emotions": [
+        "irritability",
+        "fear"
+      ],
+      "core_concern": "nightly wakings and safety worries prevent real rest"
+    },
+    "vulnerability_style": {
+      "tone": "tense_apologetic",
+      "openness": "medium",
+      "resistance_triggers": [
+        "practical_solutions",
+        "being_told_what_to_do"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I haven't slept through the night in months.",
+      "immediate_concern": "fear that admitting exhaustion means they cannot cope",
+      "what_she_needs": "to be seen as human, not a machine that should tough it out"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0009",
+    "persona": {
+      "age": 55,
+      "gender": "male",
+      "care_relationship": "grandson",
+      "living_situation": "rotates_with_sibling"
+    },
+    "care_details": {
+      "recipient_condition": "parkinsons_late_stage",
+      "care_duration_months": 21,
+      "care_hours_weekly": 48,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "medical_uncertainty",
+      "primary_emotion": "fear",
+      "secondary_emotions": [
+        "helplessness",
+        "guilt"
+      ],
+      "core_concern": "conflicting advice from specialists and unclear prognosis"
+    },
+    "vulnerability_style": {
+      "tone": "defensive_bitterness",
+      "openness": "medium_high",
+      "resistance_triggers": [
+        "being_told_to_forgive",
+        "family_advice"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "Every appointment seems to add a new possible diagnosis.",
+      "immediate_concern": "not knowing which expert to trust",
+      "what_he_needs": "a calm partner to sort information without hype"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0010",
+    "persona": {
+      "age": 62,
+      "gender": "female",
+      "care_relationship": "sister",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "stroke_recovery",
+      "care_duration_months": 26,
+      "care_hours_weekly": 59,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "social_isolation",
+      "primary_emotion": "loneliness",
+      "secondary_emotions": [
+        "envy",
+        "bitterness"
+      ],
+      "core_concern": "friends drifted away; calendar is only appointments"
+    },
+    "vulnerability_style": {
+      "tone": "rushed_guarded",
+      "openness": "high",
+      "resistance_triggers": [
+        "too_many_options",
+        "being_rushed"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I can't remember the last time I did something just for fun.",
+      "immediate_concern": "embarrassment about how small their life has become",
+      "what_she_needs": "connection without fixing their whole social life in one chat"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0011",
+    "persona": {
+      "age": 34,
+      "gender": "male",
+      "care_relationship": "son",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "als_early",
+      "care_duration_months": 31,
+      "care_hours_weekly": 24,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "work_care_conflict",
+      "primary_emotion": "stress",
+      "secondary_emotions": [
+        "guilt",
+        "fear"
+      ],
+      "core_concern": "job demands clash with unpredictable care emergencies"
+    },
+    "vulnerability_style": {
+      "tone": "numb_flat",
+      "openness": "low",
+      "resistance_triggers": [
+        "toxic_positivity",
+        "minimizing"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "My manager is polite, but I can tell the absences are adding up.",
+      "immediate_concern": "worry about being seen as unreliable",
+      "what_he_needs": "validation that the tradeoffs are brutal, not a personal failing"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0012",
+    "persona": {
+      "age": 41,
+      "gender": "female",
+      "care_relationship": "wife",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "heart_failure_home_care",
+      "care_duration_months": 36,
+      "care_hours_weekly": 35,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "sibling_resentment",
+      "primary_emotion": "anger",
+      "secondary_emotions": [
+        "hurt",
+        "fatigue"
+      ],
+      "core_concern": "uneven division of labor with siblings who are absent or critical"
+    },
+    "vulnerability_style": {
+      "tone": "anxious_hopeful",
+      "openness": "medium_low",
+      "resistance_triggers": [
+        "jargon",
+        "medical_mansplaining"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I'm the one on call, and they still question every decision I make.",
+      "immediate_concern": "whether anger makes them the bad guy in the family story",
+      "what_she_needs": "support for boundaries before family harmony pep talks"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0013",
+    "persona": {
+      "age": 48,
+      "gender": "male",
+      "care_relationship": "son-in-law",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "cancer_palliative_home",
+      "care_duration_months": 41,
+      "care_hours_weekly": 46,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "identity_loss",
+      "primary_emotion": "sadness",
+      "secondary_emotions": [
+        "numbness",
+        "guilt"
+      ],
+      "core_concern": "caregiving consumed hobbies, relationships, and sense of self"
+    },
+    "vulnerability_style": {
+      "tone": "angry_wounded",
+      "openness": "medium",
+      "resistance_triggers": [
+        "comparison_to_other_caregivers",
+        "should_statements"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I look in the mirror and barely recognize who I've become.",
+      "immediate_concern": "fear that wanting a life outside care is abandonment",
+      "what_he_needs": "permission to miss their old life without guilt"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0014",
+    "persona": {
+      "age": 55,
+      "gender": "female",
+      "care_relationship": "granddaughter",
+      "living_situation": "rotates_with_sibling"
+    },
+    "care_details": {
+      "recipient_condition": "mixed_dementia",
+      "care_duration_months": 46,
+      "care_hours_weekly": 57,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "behavioral_symptoms",
+      "primary_emotion": "fear",
+      "secondary_emotions": [
+        "shame",
+        "exhaustion"
+      ],
+      "core_concern": "agitation, wandering, or verbal outbursts in public or at night"
+    },
+    "vulnerability_style": {
+      "tone": "calm_detached",
+      "openness": "medium_high",
+      "resistance_triggers": [
+        "advice",
+        "quick_fix_suggestions"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "Last night he screamed at me for an hour and I didn't know what to do.",
+      "immediate_concern": "fear of what neighbors or friends think",
+      "what_she_needs": "validation that behavioral symptoms are medically driven, not personal attacks"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0015",
+    "persona": {
+      "age": 62,
+      "gender": "male",
+      "care_relationship": "brother",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "alzheimers_moderate",
+      "care_duration_months": 51,
+      "care_hours_weekly": 22,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "medication_fear",
+      "primary_emotion": "anxiety",
+      "secondary_emotions": [
+        "guilt",
+        "confusion"
+      ],
+      "core_concern": "complex med schedules and fear of dangerous mistakes"
+    },
+    "vulnerability_style": {
+      "tone": "overwhelmed_fragile",
+      "openness": "high",
+      "resistance_triggers": [
+        "cheerfulness",
+        "silver_linings"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I'm scared I'll miss a dose or give the wrong pill when I'm half awake.",
+      "immediate_concern": "whether one mistake could cause serious harm",
+      "what_he_needs": "normalizing how hard med management is at 2 a.m."
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0016",
+    "persona": {
+      "age": 34,
+      "gender": "female",
+      "care_relationship": "daughter",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "copd_home_oxygen",
+      "care_duration_months": 56,
+      "care_hours_weekly": 33,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "placement_guilt",
+      "primary_emotion": "guilt",
+      "secondary_emotions": [
+        "grief",
+        "relief_shame"
+      ],
+      "core_concern": "considering residential care feels like betrayal"
+    },
+    "vulnerability_style": {
+      "tone": "tired_resigned",
+      "openness": "low",
+      "resistance_triggers": [
+        "practical_solutions",
+        "being_told_what_to_do"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "Even thinking about a facility makes me feel like I gave up on her.",
+      "immediate_concern": "cultural or family narratives about duty",
+      "what_she_needs": "space to weigh values without being pushed to decide today"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0017",
+    "persona": {
+      "age": 41,
+      "gender": "male",
+      "care_relationship": "husband",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "kidney_disease_home_dialysis_support",
+      "care_duration_months": 7,
+      "care_hours_weekly": 44,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "cultural_stigma",
+      "primary_emotion": "isolation",
+      "secondary_emotions": [
+        "anger",
+        "shame"
+      ],
+      "core_concern": "community expectations conflict with personal limits"
+    },
+    "vulnerability_style": {
+      "tone": "quiet_sad",
+      "openness": "medium_low",
+      "resistance_triggers": [
+        "being_told_to_forgive",
+        "family_advice"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "In our family you're not supposed to admit you need help.",
+      "immediate_concern": "fear of gossip or disapproval",
+      "what_he_needs": "validation that seeking help can coexist with love"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0018",
+    "persona": {
+      "age": 48,
+      "gender": "female",
+      "care_relationship": "daughter-in-law",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "moderate_dementia",
+      "care_duration_months": 12,
+      "care_hours_weekly": 55,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "young_onset_caregiver",
+      "primary_emotion": "overwhelm",
+      "secondary_emotions": [
+        "anger",
+        "loneliness"
+      ],
+      "core_concern": "peers do not understand caregiving at their age"
+    },
+    "vulnerability_style": {
+      "tone": "tense_apologetic",
+      "openness": "medium",
+      "resistance_triggers": [
+        "too_many_options",
+        "being_rushed"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "My friends are planning trips; I'm scheduling wound care.",
+      "immediate_concern": "feeling left behind socially",
+      "what_she_needs": "acknowledgment that young caregivers exist and face unique losses"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0019",
+    "persona": {
+      "age": 55,
+      "gender": "male",
+      "care_relationship": "grandson",
+      "living_situation": "rotates_with_sibling"
+    },
+    "care_details": {
+      "recipient_condition": "late_stage_dementia",
+      "care_duration_months": 17,
+      "care_hours_weekly": 20,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "long_distance_guilt",
+      "primary_emotion": "guilt",
+      "secondary_emotions": [
+        "helplessness",
+        "anxiety"
+      ],
+      "core_concern": "lives far away and relies on updates that feel incomplete"
+    },
+    "vulnerability_style": {
+      "tone": "defensive_bitterness",
+      "openness": "medium_high",
+      "resistance_triggers": [
+        "toxic_positivity",
+        "minimizing"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I call every day but I still feel like I'm failing from a distance.",
+      "immediate_concern": "tension with local relatives who resent their input",
+      "what_he_needs": "validation that distance caregiving is emotionally brutal"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0020",
+    "persona": {
+      "age": 62,
+      "gender": "female",
+      "care_relationship": "sister",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "early_dementia",
+      "care_duration_months": 22,
+      "care_hours_weekly": 31,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "physical_strain",
+      "primary_emotion": "pain",
+      "secondary_emotions": [
+        "fear",
+        "resentment"
+      ],
+      "core_concern": "lifting and transfers are injuring the caregiver"
+    },
+    "vulnerability_style": {
+      "tone": "rushed_guarded",
+      "openness": "high",
+      "resistance_triggers": [
+        "jargon",
+        "medical_mansplaining"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "My back is shot and I'm scared I'll drop him one of these days.",
+      "immediate_concern": "pride about not wanting to admit physical limits",
+      "what_she_needs": "encouragement to pursue equipment and training without blame"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0021",
+    "persona": {
+      "age": 34,
+      "gender": "male",
+      "care_relationship": "son",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "parkinsons_late_stage",
+      "care_duration_months": 27,
+      "care_hours_weekly": 42,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "boundary_stress",
+      "primary_emotion": "confusion",
+      "secondary_emotions": [
+        "guilt",
+        "fear"
+      ],
+      "core_concern": "recipient's demands or confusion erode basic boundaries"
+    },
+    "vulnerability_style": {
+      "tone": "numb_flat",
+      "openness": "low",
+      "resistance_triggers": [
+        "comparison_to_other_caregivers",
+        "should_statements"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I love him, but I'm starting to dread when he wakes up.",
+      "immediate_concern": "shame about dread toward someone vulnerable",
+      "what_he_needs": "support for tiny boundaries that preserve safety and dignity"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0022",
+    "persona": {
+      "age": 41,
+      "gender": "female",
+      "care_relationship": "wife",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "stroke_recovery",
+      "care_duration_months": 32,
+      "care_hours_weekly": 53,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "family_denial",
+      "primary_emotion": "frustration",
+      "secondary_emotions": [
+        "loneliness",
+        "anger"
+      ],
+      "core_concern": "other relatives minimize decline or block practical steps"
+    },
+    "vulnerability_style": {
+      "tone": "anxious_hopeful",
+      "openness": "medium_low",
+      "resistance_triggers": [
+        "advice",
+        "quick_fix_suggestions"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "They keep saying she's fine, like I'm exaggerating for attention.",
+      "immediate_concern": "feeling gaslit by people who visit briefly",
+      "what_she_needs": "validation of what they observe day to day"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0023",
+    "persona": {
+      "age": 48,
+      "gender": "male",
+      "care_relationship": "son-in-law",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "als_early",
+      "care_duration_months": 37,
+      "care_hours_weekly": 18,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "lack_of_training",
+      "primary_emotion": "fear",
+      "secondary_emotions": [
+        "shame",
+        "overwhelm"
+      ],
+      "core_concern": "thrown into medical tasks with minimal instruction"
+    },
+    "vulnerability_style": {
+      "tone": "angry_wounded",
+      "openness": "medium",
+      "resistance_triggers": [
+        "cheerfulness",
+        "silver_linings"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "Nobody trained me how to do this\u2014I just started because I had to.",
+      "immediate_concern": "fear of doing harm while improvising",
+      "what_he_needs": "normalizing that hospitals often discharge without enough teaching"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0024",
+    "persona": {
+      "age": 55,
+      "gender": "female",
+      "care_relationship": "granddaughter",
+      "living_situation": "rotates_with_sibling"
+    },
+    "care_details": {
+      "recipient_condition": "heart_failure_home_care",
+      "care_duration_months": 42,
+      "care_hours_weekly": 29,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "substance_coping",
+      "primary_emotion": "shame",
+      "secondary_emotions": [
+        "fear",
+        "numbness"
+      ],
+      "core_concern": "using alcohol or sleep aids to cope and feeling out of control"
+    },
+    "vulnerability_style": {
+      "tone": "calm_detached",
+      "openness": "medium_high",
+      "resistance_triggers": [
+        "practical_solutions",
+        "being_told_what_to_do"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "Some nights I drink more than I'm proud of just to switch off.",
+      "immediate_concern": "fear of judgment if they're honest",
+      "what_she_needs": "nonjudgmental listening first; gentle safety framing"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0025",
+    "persona": {
+      "age": 62,
+      "gender": "male",
+      "care_relationship": "brother",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "cancer_palliative_home",
+      "care_duration_months": 47,
+      "care_hours_weekly": 40,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "holiday_overwhelm",
+      "primary_emotion": "stress",
+      "secondary_emotions": [
+        "sadness",
+        "resentment"
+      ],
+      "core_concern": "traditions and hosting feel impossible on top of care duties"
+    },
+    "vulnerability_style": {
+      "tone": "overwhelmed_fragile",
+      "openness": "high",
+      "resistance_triggers": [
+        "being_told_to_forgive",
+        "family_advice"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "The holidays used to mean rest; now they mean extra chaos.",
+      "immediate_concern": "pressure to keep appearances for extended family",
+      "what_he_needs": "validation that seasonal expectations hit caregivers hard"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0026",
+    "persona": {
+      "age": 34,
+      "gender": "female",
+      "care_relationship": "daughter",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "mixed_dementia",
+      "care_duration_months": 52,
+      "care_hours_weekly": 51,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "insurance_battle",
+      "primary_emotion": "anger",
+      "secondary_emotions": [
+        "exhaustion",
+        "helplessness"
+      ],
+      "core_concern": "paperwork and denials delay needed equipment or services"
+    },
+    "vulnerability_style": {
+      "tone": "tired_resigned",
+      "openness": "low",
+      "resistance_triggers": [
+        "too_many_options",
+        "being_rushed"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I've spent hours on hold and we still don't have the wheelchair approved.",
+      "immediate_concern": "feeling the system is designed to wear people down",
+      "what_she_needs": "empathy for bureaucracy fatigue before tips"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0027",
+    "persona": {
+      "age": 41,
+      "gender": "male",
+      "care_relationship": "husband",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "alzheimers_moderate",
+      "care_duration_months": 57,
+      "care_hours_weekly": 16,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "intimacy_change",
+      "primary_emotion": "grief",
+      "secondary_emotions": [
+        "loneliness",
+        "guilt"
+      ],
+      "core_concern": "spousal relationship altered by illness and caregiving roles"
+    },
+    "vulnerability_style": {
+      "tone": "quiet_sad",
+      "openness": "medium_low",
+      "resistance_triggers": [
+        "toxic_positivity",
+        "minimizing"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "We're more like nurse and patient than partners now.",
+      "immediate_concern": "guilt for missing intimacy while someone is suffering",
+      "what_he_needs": "space to mourn the marriage they had alongside commitment now"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0028",
+    "persona": {
+      "age": 48,
+      "gender": "female",
+      "care_relationship": "daughter-in-law",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "copd_home_oxygen",
+      "care_duration_months": 8,
+      "care_hours_weekly": 27,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "child_care_overlap",
+      "primary_emotion": "guilt",
+      "secondary_emotions": [
+        "stress",
+        "fear"
+      ],
+      "core_concern": "raising kids while caring for an aging parent in the same home"
+    },
+    "vulnerability_style": {
+      "tone": "tense_apologetic",
+      "openness": "medium",
+      "resistance_triggers": [
+        "jargon",
+        "medical_mansplaining"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I snap at my kids because I'm depleted before breakfast.",
+      "immediate_concern": "fear of damaging their children while honoring elders",
+      "what_she_needs": "validation that competing duties create impossible moments"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0029",
+    "persona": {
+      "age": 55,
+      "gender": "male",
+      "care_relationship": "grandson",
+      "living_situation": "rotates_with_sibling"
+    },
+    "care_details": {
+      "recipient_condition": "kidney_disease_home_dialysis_support",
+      "care_duration_months": 13,
+      "care_hours_weekly": 38,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "nutrition_hydration_struggle",
+      "primary_emotion": "worry",
+      "secondary_emotions": [
+        "frustration",
+        "guilt"
+      ],
+      "core_concern": "refusal to eat or drink leading to conflict and fear"
+    },
+    "vulnerability_style": {
+      "tone": "defensive_bitterness",
+      "openness": "medium_high",
+      "resistance_triggers": [
+        "comparison_to_other_caregivers",
+        "should_statements"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "Every meal turns into a fight and I hate being the enforcer.",
+      "immediate_concern": "fear of accelerated decline if intake stays low",
+      "what_he_needs": "recognition that eating struggles are common in many conditions"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0030",
+    "persona": {
+      "age": 62,
+      "gender": "female",
+      "care_relationship": "sister",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "moderate_dementia",
+      "care_duration_months": 18,
+      "care_hours_weekly": 49,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "technology_overload",
+      "primary_emotion": "overwhelm",
+      "secondary_emotions": [
+        "shame",
+        "anger"
+      ],
+      "core_concern": "portals, apps, and devices multiply without clear support"
+    },
+    "vulnerability_style": {
+      "tone": "rushed_guarded",
+      "openness": "high",
+      "resistance_triggers": [
+        "advice",
+        "quick_fix_suggestions"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I have seven passwords and I still can't find the lab results.",
+      "immediate_concern": "feeling too old or too tired to keep up",
+      "what_she_needs": "patient walkthrough tone without condescension"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0031",
+    "persona": {
+      "age": 34,
+      "gender": "male",
+      "care_relationship": "son",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "late_stage_dementia",
+      "care_duration_months": 23,
+      "care_hours_weekly": 60,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "anticipatory_grief_wave",
+      "primary_emotion": "sadness",
+      "secondary_emotions": [
+        "anxiety",
+        "numbness"
+      ],
+      "core_concern": "good days feel borrowed; bad days feel like foreshadowing"
+    },
+    "vulnerability_style": {
+      "tone": "numb_flat",
+      "openness": "low",
+      "resistance_triggers": [
+        "cheerfulness",
+        "silver_linings"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "When she's alert, part of me can't enjoy it because I'm bracing.",
+      "immediate_concern": "fear that cherishing moments is denial",
+      "what_he_needs": "permission to feel joy and grief in the same hour"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0032",
+    "persona": {
+      "age": 41,
+      "gender": "female",
+      "care_relationship": "wife",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "early_dementia",
+      "care_duration_months": 28,
+      "care_hours_weekly": 25,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "financial_strain",
+      "primary_emotion": "anxiety",
+      "secondary_emotions": [
+        "shame",
+        "anger"
+      ],
+      "core_concern": "medical bills and lost income are squeezing the household"
+    },
+    "vulnerability_style": {
+      "tone": "anxious_hopeful",
+      "openness": "medium_low",
+      "resistance_triggers": [
+        "practical_solutions",
+        "being_told_what_to_do"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "We're one surprise expense away from not making rent.",
+      "immediate_concern": "whether talking about money makes them look irresponsible",
+      "what_she_needs": "practical empathy before budgeting lectures"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0033",
+    "persona": {
+      "age": 48,
+      "gender": "male",
+      "care_relationship": "son-in-law",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "parkinsons_late_stage",
+      "care_duration_months": 33,
+      "care_hours_weekly": 36,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "role_reversal",
+      "primary_emotion": "disorientation",
+      "secondary_emotions": [
+        "grief",
+        "resentment"
+      ],
+      "core_concern": "parent now depends on them for basics they used to handle alone"
+    },
+    "vulnerability_style": {
+      "tone": "angry_wounded",
+      "openness": "medium",
+      "resistance_triggers": [
+        "being_told_to_forgive",
+        "family_advice"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I keep catching myself wanting my mom back\u2014the one who took care of me.",
+      "immediate_concern": "feeling childish for resenting someone who is ill",
+      "what_he_needs": "permission to grieve the old relationship while showing up now"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0034",
+    "persona": {
+      "age": 55,
+      "gender": "female",
+      "care_relationship": "granddaughter",
+      "living_situation": "rotates_with_sibling"
+    },
+    "care_details": {
+      "recipient_condition": "stroke_recovery",
+      "care_duration_months": 38,
+      "care_hours_weekly": 47,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "sleep_deprivation",
+      "primary_emotion": "exhaustion",
+      "secondary_emotions": [
+        "irritability",
+        "fear"
+      ],
+      "core_concern": "nightly wakings and safety worries prevent real rest"
+    },
+    "vulnerability_style": {
+      "tone": "calm_detached",
+      "openness": "medium_high",
+      "resistance_triggers": [
+        "too_many_options",
+        "being_rushed"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I haven't slept through the night in months.",
+      "immediate_concern": "fear that admitting exhaustion means they cannot cope",
+      "what_she_needs": "to be seen as human, not a machine that should tough it out"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0035",
+    "persona": {
+      "age": 62,
+      "gender": "male",
+      "care_relationship": "brother",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "als_early",
+      "care_duration_months": 43,
+      "care_hours_weekly": 58,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "medical_uncertainty",
+      "primary_emotion": "fear",
+      "secondary_emotions": [
+        "helplessness",
+        "guilt"
+      ],
+      "core_concern": "conflicting advice from specialists and unclear prognosis"
+    },
+    "vulnerability_style": {
+      "tone": "overwhelmed_fragile",
+      "openness": "high",
+      "resistance_triggers": [
+        "toxic_positivity",
+        "minimizing"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "Every appointment seems to add a new possible diagnosis.",
+      "immediate_concern": "not knowing which expert to trust",
+      "what_he_needs": "a calm partner to sort information without hype"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0036",
+    "persona": {
+      "age": 34,
+      "gender": "female",
+      "care_relationship": "daughter",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "heart_failure_home_care",
+      "care_duration_months": 48,
+      "care_hours_weekly": 23,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "social_isolation",
+      "primary_emotion": "loneliness",
+      "secondary_emotions": [
+        "envy",
+        "bitterness"
+      ],
+      "core_concern": "friends drifted away; calendar is only appointments"
+    },
+    "vulnerability_style": {
+      "tone": "tired_resigned",
+      "openness": "low",
+      "resistance_triggers": [
+        "jargon",
+        "medical_mansplaining"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I can't remember the last time I did something just for fun.",
+      "immediate_concern": "embarrassment about how small their life has become",
+      "what_she_needs": "connection without fixing their whole social life in one chat"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0037",
+    "persona": {
+      "age": 41,
+      "gender": "male",
+      "care_relationship": "husband",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "cancer_palliative_home",
+      "care_duration_months": 53,
+      "care_hours_weekly": 34,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "work_care_conflict",
+      "primary_emotion": "stress",
+      "secondary_emotions": [
+        "guilt",
+        "fear"
+      ],
+      "core_concern": "job demands clash with unpredictable care emergencies"
+    },
+    "vulnerability_style": {
+      "tone": "quiet_sad",
+      "openness": "medium_low",
+      "resistance_triggers": [
+        "comparison_to_other_caregivers",
+        "should_statements"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "My manager is polite, but I can tell the absences are adding up.",
+      "immediate_concern": "worry about being seen as unreliable",
+      "what_he_needs": "validation that the tradeoffs are brutal, not a personal failing"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0038",
+    "persona": {
+      "age": 48,
+      "gender": "female",
+      "care_relationship": "daughter-in-law",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "mixed_dementia",
+      "care_duration_months": 58,
+      "care_hours_weekly": 45,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "sibling_resentment",
+      "primary_emotion": "anger",
+      "secondary_emotions": [
+        "hurt",
+        "fatigue"
+      ],
+      "core_concern": "uneven division of labor with siblings who are absent or critical"
+    },
+    "vulnerability_style": {
+      "tone": "tense_apologetic",
+      "openness": "medium",
+      "resistance_triggers": [
+        "advice",
+        "quick_fix_suggestions"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I'm the one on call, and they still question every decision I make.",
+      "immediate_concern": "whether anger makes them the bad guy in the family story",
+      "what_she_needs": "support for boundaries before family harmony pep talks"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0039",
+    "persona": {
+      "age": 55,
+      "gender": "male",
+      "care_relationship": "grandson",
+      "living_situation": "rotates_with_sibling"
+    },
+    "care_details": {
+      "recipient_condition": "alzheimers_moderate",
+      "care_duration_months": 9,
+      "care_hours_weekly": 56,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "identity_loss",
+      "primary_emotion": "sadness",
+      "secondary_emotions": [
+        "numbness",
+        "guilt"
+      ],
+      "core_concern": "caregiving consumed hobbies, relationships, and sense of self"
+    },
+    "vulnerability_style": {
+      "tone": "defensive_bitterness",
+      "openness": "medium_high",
+      "resistance_triggers": [
+        "cheerfulness",
+        "silver_linings"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I look in the mirror and barely recognize who I've become.",
+      "immediate_concern": "fear that wanting a life outside care is abandonment",
+      "what_he_needs": "permission to miss their old life without guilt"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0040",
+    "persona": {
+      "age": 62,
+      "gender": "female",
+      "care_relationship": "sister",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "copd_home_oxygen",
+      "care_duration_months": 14,
+      "care_hours_weekly": 21,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "behavioral_symptoms",
+      "primary_emotion": "fear",
+      "secondary_emotions": [
+        "shame",
+        "exhaustion"
+      ],
+      "core_concern": "agitation, wandering, or verbal outbursts in public or at night"
+    },
+    "vulnerability_style": {
+      "tone": "rushed_guarded",
+      "openness": "high",
+      "resistance_triggers": [
+        "practical_solutions",
+        "being_told_what_to_do"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "Last night he screamed at me for an hour and I didn't know what to do.",
+      "immediate_concern": "fear of what neighbors or friends think",
+      "what_she_needs": "validation that behavioral symptoms are medically driven, not personal attacks"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0041",
+    "persona": {
+      "age": 34,
+      "gender": "male",
+      "care_relationship": "son",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "kidney_disease_home_dialysis_support",
+      "care_duration_months": 19,
+      "care_hours_weekly": 32,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "medication_fear",
+      "primary_emotion": "anxiety",
+      "secondary_emotions": [
+        "guilt",
+        "confusion"
+      ],
+      "core_concern": "complex med schedules and fear of dangerous mistakes"
+    },
+    "vulnerability_style": {
+      "tone": "numb_flat",
+      "openness": "low",
+      "resistance_triggers": [
+        "being_told_to_forgive",
+        "family_advice"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I'm scared I'll miss a dose or give the wrong pill when I'm half awake.",
+      "immediate_concern": "whether one mistake could cause serious harm",
+      "what_he_needs": "normalizing how hard med management is at 2 a.m."
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0042",
+    "persona": {
+      "age": 41,
+      "gender": "female",
+      "care_relationship": "wife",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "moderate_dementia",
+      "care_duration_months": 24,
+      "care_hours_weekly": 43,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "placement_guilt",
+      "primary_emotion": "guilt",
+      "secondary_emotions": [
+        "grief",
+        "relief_shame"
+      ],
+      "core_concern": "considering residential care feels like betrayal"
+    },
+    "vulnerability_style": {
+      "tone": "anxious_hopeful",
+      "openness": "medium_low",
+      "resistance_triggers": [
+        "too_many_options",
+        "being_rushed"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "Even thinking about a facility makes me feel like I gave up on her.",
+      "immediate_concern": "cultural or family narratives about duty",
+      "what_she_needs": "space to weigh values without being pushed to decide today"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0043",
+    "persona": {
+      "age": 48,
+      "gender": "male",
+      "care_relationship": "son-in-law",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "late_stage_dementia",
+      "care_duration_months": 29,
+      "care_hours_weekly": 54,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "cultural_stigma",
+      "primary_emotion": "isolation",
+      "secondary_emotions": [
+        "anger",
+        "shame"
+      ],
+      "core_concern": "community expectations conflict with personal limits"
+    },
+    "vulnerability_style": {
+      "tone": "angry_wounded",
+      "openness": "medium",
+      "resistance_triggers": [
+        "toxic_positivity",
+        "minimizing"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "In our family you're not supposed to admit you need help.",
+      "immediate_concern": "fear of gossip or disapproval",
+      "what_he_needs": "validation that seeking help can coexist with love"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0044",
+    "persona": {
+      "age": 55,
+      "gender": "female",
+      "care_relationship": "granddaughter",
+      "living_situation": "rotates_with_sibling"
+    },
+    "care_details": {
+      "recipient_condition": "early_dementia",
+      "care_duration_months": 34,
+      "care_hours_weekly": 19,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "young_onset_caregiver",
+      "primary_emotion": "overwhelm",
+      "secondary_emotions": [
+        "anger",
+        "loneliness"
+      ],
+      "core_concern": "peers do not understand caregiving at their age"
+    },
+    "vulnerability_style": {
+      "tone": "calm_detached",
+      "openness": "medium_high",
+      "resistance_triggers": [
+        "jargon",
+        "medical_mansplaining"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "My friends are planning trips; I'm scheduling wound care.",
+      "immediate_concern": "feeling left behind socially",
+      "what_she_needs": "acknowledgment that young caregivers exist and face unique losses"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0045",
+    "persona": {
+      "age": 62,
+      "gender": "male",
+      "care_relationship": "brother",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "parkinsons_late_stage",
+      "care_duration_months": 39,
+      "care_hours_weekly": 30,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "long_distance_guilt",
+      "primary_emotion": "guilt",
+      "secondary_emotions": [
+        "helplessness",
+        "anxiety"
+      ],
+      "core_concern": "lives far away and relies on updates that feel incomplete"
+    },
+    "vulnerability_style": {
+      "tone": "overwhelmed_fragile",
+      "openness": "high",
+      "resistance_triggers": [
+        "comparison_to_other_caregivers",
+        "should_statements"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I call every day but I still feel like I'm failing from a distance.",
+      "immediate_concern": "tension with local relatives who resent their input",
+      "what_he_needs": "validation that distance caregiving is emotionally brutal"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0046",
+    "persona": {
+      "age": 34,
+      "gender": "female",
+      "care_relationship": "daughter",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "stroke_recovery",
+      "care_duration_months": 44,
+      "care_hours_weekly": 41,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "physical_strain",
+      "primary_emotion": "pain",
+      "secondary_emotions": [
+        "fear",
+        "resentment"
+      ],
+      "core_concern": "lifting and transfers are injuring the caregiver"
+    },
+    "vulnerability_style": {
+      "tone": "tired_resigned",
+      "openness": "low",
+      "resistance_triggers": [
+        "advice",
+        "quick_fix_suggestions"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "My back is shot and I'm scared I'll drop him one of these days.",
+      "immediate_concern": "pride about not wanting to admit physical limits",
+      "what_she_needs": "encouragement to pursue equipment and training without blame"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0047",
+    "persona": {
+      "age": 41,
+      "gender": "male",
+      "care_relationship": "husband",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "als_early",
+      "care_duration_months": 49,
+      "care_hours_weekly": 52,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "boundary_stress",
+      "primary_emotion": "confusion",
+      "secondary_emotions": [
+        "guilt",
+        "fear"
+      ],
+      "core_concern": "recipient's demands or confusion erode basic boundaries"
+    },
+    "vulnerability_style": {
+      "tone": "quiet_sad",
+      "openness": "medium_low",
+      "resistance_triggers": [
+        "cheerfulness",
+        "silver_linings"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I love him, but I'm starting to dread when he wakes up.",
+      "immediate_concern": "shame about dread toward someone vulnerable",
+      "what_he_needs": "support for tiny boundaries that preserve safety and dignity"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0048",
+    "persona": {
+      "age": 48,
+      "gender": "female",
+      "care_relationship": "daughter-in-law",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "heart_failure_home_care",
+      "care_duration_months": 54,
+      "care_hours_weekly": 17,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "family_denial",
+      "primary_emotion": "frustration",
+      "secondary_emotions": [
+        "loneliness",
+        "anger"
+      ],
+      "core_concern": "other relatives minimize decline or block practical steps"
+    },
+    "vulnerability_style": {
+      "tone": "tense_apologetic",
+      "openness": "medium",
+      "resistance_triggers": [
+        "practical_solutions",
+        "being_told_what_to_do"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "They keep saying she's fine, like I'm exaggerating for attention.",
+      "immediate_concern": "feeling gaslit by people who visit briefly",
+      "what_she_needs": "validation of what they observe day to day"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0049",
+    "persona": {
+      "age": 55,
+      "gender": "male",
+      "care_relationship": "grandson",
+      "living_situation": "rotates_with_sibling"
+    },
+    "care_details": {
+      "recipient_condition": "cancer_palliative_home",
+      "care_duration_months": 59,
+      "care_hours_weekly": 28,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "lack_of_training",
+      "primary_emotion": "fear",
+      "secondary_emotions": [
+        "shame",
+        "overwhelm"
+      ],
+      "core_concern": "thrown into medical tasks with minimal instruction"
+    },
+    "vulnerability_style": {
+      "tone": "defensive_bitterness",
+      "openness": "medium_high",
+      "resistance_triggers": [
+        "being_told_to_forgive",
+        "family_advice"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "Nobody trained me how to do this\u2014I just started because I had to.",
+      "immediate_concern": "fear of doing harm while improvising",
+      "what_he_needs": "normalizing that hospitals often discharge without enough teaching"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0050",
+    "persona": {
+      "age": 62,
+      "gender": "female",
+      "care_relationship": "sister",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "mixed_dementia",
+      "care_duration_months": 10,
+      "care_hours_weekly": 39,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "substance_coping",
+      "primary_emotion": "shame",
+      "secondary_emotions": [
+        "fear",
+        "numbness"
+      ],
+      "core_concern": "using alcohol or sleep aids to cope and feeling out of control"
+    },
+    "vulnerability_style": {
+      "tone": "rushed_guarded",
+      "openness": "high",
+      "resistance_triggers": [
+        "too_many_options",
+        "being_rushed"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "Some nights I drink more than I'm proud of just to switch off.",
+      "immediate_concern": "fear of judgment if they're honest",
+      "what_she_needs": "nonjudgmental listening first; gentle safety framing"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0051",
+    "persona": {
+      "age": 34,
+      "gender": "male",
+      "care_relationship": "son",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "alzheimers_moderate",
+      "care_duration_months": 15,
+      "care_hours_weekly": 50,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "holiday_overwhelm",
+      "primary_emotion": "stress",
+      "secondary_emotions": [
+        "sadness",
+        "resentment"
+      ],
+      "core_concern": "traditions and hosting feel impossible on top of care duties"
+    },
+    "vulnerability_style": {
+      "tone": "numb_flat",
+      "openness": "low",
+      "resistance_triggers": [
+        "toxic_positivity",
+        "minimizing"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "The holidays used to mean rest; now they mean extra chaos.",
+      "immediate_concern": "pressure to keep appearances for extended family",
+      "what_he_needs": "validation that seasonal expectations hit caregivers hard"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0052",
+    "persona": {
+      "age": 41,
+      "gender": "female",
+      "care_relationship": "wife",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "copd_home_oxygen",
+      "care_duration_months": 20,
+      "care_hours_weekly": 15,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "insurance_battle",
+      "primary_emotion": "anger",
+      "secondary_emotions": [
+        "exhaustion",
+        "helplessness"
+      ],
+      "core_concern": "paperwork and denials delay needed equipment or services"
+    },
+    "vulnerability_style": {
+      "tone": "anxious_hopeful",
+      "openness": "medium_low",
+      "resistance_triggers": [
+        "jargon",
+        "medical_mansplaining"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I've spent hours on hold and we still don't have the wheelchair approved.",
+      "immediate_concern": "feeling the system is designed to wear people down",
+      "what_she_needs": "empathy for bureaucracy fatigue before tips"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0053",
+    "persona": {
+      "age": 48,
+      "gender": "male",
+      "care_relationship": "son-in-law",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "kidney_disease_home_dialysis_support",
+      "care_duration_months": 25,
+      "care_hours_weekly": 26,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "intimacy_change",
+      "primary_emotion": "grief",
+      "secondary_emotions": [
+        "loneliness",
+        "guilt"
+      ],
+      "core_concern": "spousal relationship altered by illness and caregiving roles"
+    },
+    "vulnerability_style": {
+      "tone": "angry_wounded",
+      "openness": "medium",
+      "resistance_triggers": [
+        "comparison_to_other_caregivers",
+        "should_statements"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "We're more like nurse and patient than partners now.",
+      "immediate_concern": "guilt for missing intimacy while someone is suffering",
+      "what_he_needs": "space to mourn the marriage they had alongside commitment now"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0054",
+    "persona": {
+      "age": 55,
+      "gender": "female",
+      "care_relationship": "granddaughter",
+      "living_situation": "rotates_with_sibling"
+    },
+    "care_details": {
+      "recipient_condition": "moderate_dementia",
+      "care_duration_months": 30,
+      "care_hours_weekly": 37,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "child_care_overlap",
+      "primary_emotion": "guilt",
+      "secondary_emotions": [
+        "stress",
+        "fear"
+      ],
+      "core_concern": "raising kids while caring for an aging parent in the same home"
+    },
+    "vulnerability_style": {
+      "tone": "calm_detached",
+      "openness": "medium_high",
+      "resistance_triggers": [
+        "advice",
+        "quick_fix_suggestions"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I snap at my kids because I'm depleted before breakfast.",
+      "immediate_concern": "fear of damaging their children while honoring elders",
+      "what_she_needs": "validation that competing duties create impossible moments"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0055",
+    "persona": {
+      "age": 62,
+      "gender": "male",
+      "care_relationship": "brother",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "late_stage_dementia",
+      "care_duration_months": 35,
+      "care_hours_weekly": 48,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "nutrition_hydration_struggle",
+      "primary_emotion": "worry",
+      "secondary_emotions": [
+        "frustration",
+        "guilt"
+      ],
+      "core_concern": "refusal to eat or drink leading to conflict and fear"
+    },
+    "vulnerability_style": {
+      "tone": "overwhelmed_fragile",
+      "openness": "high",
+      "resistance_triggers": [
+        "cheerfulness",
+        "silver_linings"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "Every meal turns into a fight and I hate being the enforcer.",
+      "immediate_concern": "fear of accelerated decline if intake stays low",
+      "what_he_needs": "recognition that eating struggles are common in many conditions"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0056",
+    "persona": {
+      "age": 34,
+      "gender": "female",
+      "care_relationship": "daughter",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "early_dementia",
+      "care_duration_months": 40,
+      "care_hours_weekly": 59,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "technology_overload",
+      "primary_emotion": "overwhelm",
+      "secondary_emotions": [
+        "shame",
+        "anger"
+      ],
+      "core_concern": "portals, apps, and devices multiply without clear support"
+    },
+    "vulnerability_style": {
+      "tone": "tired_resigned",
+      "openness": "low",
+      "resistance_triggers": [
+        "practical_solutions",
+        "being_told_what_to_do"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I have seven passwords and I still can't find the lab results.",
+      "immediate_concern": "feeling too old or too tired to keep up",
+      "what_she_needs": "patient walkthrough tone without condescension"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0057",
+    "persona": {
+      "age": 41,
+      "gender": "male",
+      "care_relationship": "husband",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "parkinsons_late_stage",
+      "care_duration_months": 45,
+      "care_hours_weekly": 24,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "anticipatory_grief_wave",
+      "primary_emotion": "sadness",
+      "secondary_emotions": [
+        "anxiety",
+        "numbness"
+      ],
+      "core_concern": "good days feel borrowed; bad days feel like foreshadowing"
+    },
+    "vulnerability_style": {
+      "tone": "quiet_sad",
+      "openness": "medium_low",
+      "resistance_triggers": [
+        "being_told_to_forgive",
+        "family_advice"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "When she's alert, part of me can't enjoy it because I'm bracing.",
+      "immediate_concern": "fear that cherishing moments is denial",
+      "what_he_needs": "permission to feel joy and grief in the same hour"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0058",
+    "persona": {
+      "age": 48,
+      "gender": "female",
+      "care_relationship": "daughter-in-law",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "stroke_recovery",
+      "care_duration_months": 50,
+      "care_hours_weekly": 35,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "financial_strain",
+      "primary_emotion": "anxiety",
+      "secondary_emotions": [
+        "shame",
+        "anger"
+      ],
+      "core_concern": "medical bills and lost income are squeezing the household"
+    },
+    "vulnerability_style": {
+      "tone": "tense_apologetic",
+      "openness": "medium",
+      "resistance_triggers": [
+        "too_many_options",
+        "being_rushed"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "We're one surprise expense away from not making rent.",
+      "immediate_concern": "whether talking about money makes them look irresponsible",
+      "what_she_needs": "practical empathy before budgeting lectures"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0059",
+    "persona": {
+      "age": 55,
+      "gender": "male",
+      "care_relationship": "grandson",
+      "living_situation": "rotates_with_sibling"
+    },
+    "care_details": {
+      "recipient_condition": "als_early",
+      "care_duration_months": 55,
+      "care_hours_weekly": 46,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "role_reversal",
+      "primary_emotion": "disorientation",
+      "secondary_emotions": [
+        "grief",
+        "resentment"
+      ],
+      "core_concern": "parent now depends on them for basics they used to handle alone"
+    },
+    "vulnerability_style": {
+      "tone": "defensive_bitterness",
+      "openness": "medium_high",
+      "resistance_triggers": [
+        "toxic_positivity",
+        "minimizing"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I keep catching myself wanting my mom back\u2014the one who took care of me.",
+      "immediate_concern": "feeling childish for resenting someone who is ill",
+      "what_he_needs": "permission to grieve the old relationship while showing up now"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0060",
+    "persona": {
+      "age": 62,
+      "gender": "female",
+      "care_relationship": "sister",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "heart_failure_home_care",
+      "care_duration_months": 6,
+      "care_hours_weekly": 57,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "sleep_deprivation",
+      "primary_emotion": "exhaustion",
+      "secondary_emotions": [
+        "irritability",
+        "fear"
+      ],
+      "core_concern": "nightly wakings and safety worries prevent real rest"
+    },
+    "vulnerability_style": {
+      "tone": "rushed_guarded",
+      "openness": "high",
+      "resistance_triggers": [
+        "jargon",
+        "medical_mansplaining"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I haven't slept through the night in months.",
+      "immediate_concern": "fear that admitting exhaustion means they cannot cope",
+      "what_she_needs": "to be seen as human, not a machine that should tough it out"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0061",
+    "persona": {
+      "age": 34,
+      "gender": "male",
+      "care_relationship": "son",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "cancer_palliative_home",
+      "care_duration_months": 11,
+      "care_hours_weekly": 22,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "medical_uncertainty",
+      "primary_emotion": "fear",
+      "secondary_emotions": [
+        "helplessness",
+        "guilt"
+      ],
+      "core_concern": "conflicting advice from specialists and unclear prognosis"
+    },
+    "vulnerability_style": {
+      "tone": "numb_flat",
+      "openness": "low",
+      "resistance_triggers": [
+        "comparison_to_other_caregivers",
+        "should_statements"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "Every appointment seems to add a new possible diagnosis.",
+      "immediate_concern": "not knowing which expert to trust",
+      "what_he_needs": "a calm partner to sort information without hype"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0062",
+    "persona": {
+      "age": 41,
+      "gender": "female",
+      "care_relationship": "wife",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "mixed_dementia",
+      "care_duration_months": 16,
+      "care_hours_weekly": 33,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "social_isolation",
+      "primary_emotion": "loneliness",
+      "secondary_emotions": [
+        "envy",
+        "bitterness"
+      ],
+      "core_concern": "friends drifted away; calendar is only appointments"
+    },
+    "vulnerability_style": {
+      "tone": "anxious_hopeful",
+      "openness": "medium_low",
+      "resistance_triggers": [
+        "advice",
+        "quick_fix_suggestions"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I can't remember the last time I did something just for fun.",
+      "immediate_concern": "embarrassment about how small their life has become",
+      "what_she_needs": "connection without fixing their whole social life in one chat"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0063",
+    "persona": {
+      "age": 48,
+      "gender": "male",
+      "care_relationship": "son-in-law",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "alzheimers_moderate",
+      "care_duration_months": 21,
+      "care_hours_weekly": 44,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "work_care_conflict",
+      "primary_emotion": "stress",
+      "secondary_emotions": [
+        "guilt",
+        "fear"
+      ],
+      "core_concern": "job demands clash with unpredictable care emergencies"
+    },
+    "vulnerability_style": {
+      "tone": "angry_wounded",
+      "openness": "medium",
+      "resistance_triggers": [
+        "cheerfulness",
+        "silver_linings"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "My manager is polite, but I can tell the absences are adding up.",
+      "immediate_concern": "worry about being seen as unreliable",
+      "what_he_needs": "validation that the tradeoffs are brutal, not a personal failing"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0064",
+    "persona": {
+      "age": 55,
+      "gender": "female",
+      "care_relationship": "granddaughter",
+      "living_situation": "rotates_with_sibling"
+    },
+    "care_details": {
+      "recipient_condition": "copd_home_oxygen",
+      "care_duration_months": 26,
+      "care_hours_weekly": 55,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "sibling_resentment",
+      "primary_emotion": "anger",
+      "secondary_emotions": [
+        "hurt",
+        "fatigue"
+      ],
+      "core_concern": "uneven division of labor with siblings who are absent or critical"
+    },
+    "vulnerability_style": {
+      "tone": "calm_detached",
+      "openness": "medium_high",
+      "resistance_triggers": [
+        "practical_solutions",
+        "being_told_what_to_do"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I'm the one on call, and they still question every decision I make.",
+      "immediate_concern": "whether anger makes them the bad guy in the family story",
+      "what_she_needs": "support for boundaries before family harmony pep talks"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0065",
+    "persona": {
+      "age": 62,
+      "gender": "male",
+      "care_relationship": "brother",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "kidney_disease_home_dialysis_support",
+      "care_duration_months": 31,
+      "care_hours_weekly": 20,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "identity_loss",
+      "primary_emotion": "sadness",
+      "secondary_emotions": [
+        "numbness",
+        "guilt"
+      ],
+      "core_concern": "caregiving consumed hobbies, relationships, and sense of self"
+    },
+    "vulnerability_style": {
+      "tone": "overwhelmed_fragile",
+      "openness": "high",
+      "resistance_triggers": [
+        "being_told_to_forgive",
+        "family_advice"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I look in the mirror and barely recognize who I've become.",
+      "immediate_concern": "fear that wanting a life outside care is abandonment",
+      "what_he_needs": "permission to miss their old life without guilt"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0066",
+    "persona": {
+      "age": 34,
+      "gender": "female",
+      "care_relationship": "daughter",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "moderate_dementia",
+      "care_duration_months": 36,
+      "care_hours_weekly": 31,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "behavioral_symptoms",
+      "primary_emotion": "fear",
+      "secondary_emotions": [
+        "shame",
+        "exhaustion"
+      ],
+      "core_concern": "agitation, wandering, or verbal outbursts in public or at night"
+    },
+    "vulnerability_style": {
+      "tone": "tired_resigned",
+      "openness": "low",
+      "resistance_triggers": [
+        "too_many_options",
+        "being_rushed"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "Last night he screamed at me for an hour and I didn't know what to do.",
+      "immediate_concern": "fear of what neighbors or friends think",
+      "what_she_needs": "validation that behavioral symptoms are medically driven, not personal attacks"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0067",
+    "persona": {
+      "age": 41,
+      "gender": "male",
+      "care_relationship": "husband",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "late_stage_dementia",
+      "care_duration_months": 41,
+      "care_hours_weekly": 42,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "medication_fear",
+      "primary_emotion": "anxiety",
+      "secondary_emotions": [
+        "guilt",
+        "confusion"
+      ],
+      "core_concern": "complex med schedules and fear of dangerous mistakes"
+    },
+    "vulnerability_style": {
+      "tone": "quiet_sad",
+      "openness": "medium_low",
+      "resistance_triggers": [
+        "toxic_positivity",
+        "minimizing"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I'm scared I'll miss a dose or give the wrong pill when I'm half awake.",
+      "immediate_concern": "whether one mistake could cause serious harm",
+      "what_he_needs": "normalizing how hard med management is at 2 a.m."
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0068",
+    "persona": {
+      "age": 48,
+      "gender": "female",
+      "care_relationship": "daughter-in-law",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "early_dementia",
+      "care_duration_months": 46,
+      "care_hours_weekly": 53,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "placement_guilt",
+      "primary_emotion": "guilt",
+      "secondary_emotions": [
+        "grief",
+        "relief_shame"
+      ],
+      "core_concern": "considering residential care feels like betrayal"
+    },
+    "vulnerability_style": {
+      "tone": "tense_apologetic",
+      "openness": "medium",
+      "resistance_triggers": [
+        "jargon",
+        "medical_mansplaining"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "Even thinking about a facility makes me feel like I gave up on her.",
+      "immediate_concern": "cultural or family narratives about duty",
+      "what_she_needs": "space to weigh values without being pushed to decide today"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0069",
+    "persona": {
+      "age": 55,
+      "gender": "male",
+      "care_relationship": "grandson",
+      "living_situation": "rotates_with_sibling"
+    },
+    "care_details": {
+      "recipient_condition": "parkinsons_late_stage",
+      "care_duration_months": 51,
+      "care_hours_weekly": 18,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "cultural_stigma",
+      "primary_emotion": "isolation",
+      "secondary_emotions": [
+        "anger",
+        "shame"
+      ],
+      "core_concern": "community expectations conflict with personal limits"
+    },
+    "vulnerability_style": {
+      "tone": "defensive_bitterness",
+      "openness": "medium_high",
+      "resistance_triggers": [
+        "comparison_to_other_caregivers",
+        "should_statements"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "In our family you're not supposed to admit you need help.",
+      "immediate_concern": "fear of gossip or disapproval",
+      "what_he_needs": "validation that seeking help can coexist with love"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0070",
+    "persona": {
+      "age": 62,
+      "gender": "female",
+      "care_relationship": "sister",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "stroke_recovery",
+      "care_duration_months": 56,
+      "care_hours_weekly": 29,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "young_onset_caregiver",
+      "primary_emotion": "overwhelm",
+      "secondary_emotions": [
+        "anger",
+        "loneliness"
+      ],
+      "core_concern": "peers do not understand caregiving at their age"
+    },
+    "vulnerability_style": {
+      "tone": "rushed_guarded",
+      "openness": "high",
+      "resistance_triggers": [
+        "advice",
+        "quick_fix_suggestions"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "My friends are planning trips; I'm scheduling wound care.",
+      "immediate_concern": "feeling left behind socially",
+      "what_she_needs": "acknowledgment that young caregivers exist and face unique losses"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0071",
+    "persona": {
+      "age": 34,
+      "gender": "male",
+      "care_relationship": "son",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "als_early",
+      "care_duration_months": 7,
+      "care_hours_weekly": 40,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "long_distance_guilt",
+      "primary_emotion": "guilt",
+      "secondary_emotions": [
+        "helplessness",
+        "anxiety"
+      ],
+      "core_concern": "lives far away and relies on updates that feel incomplete"
+    },
+    "vulnerability_style": {
+      "tone": "numb_flat",
+      "openness": "low",
+      "resistance_triggers": [
+        "cheerfulness",
+        "silver_linings"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I call every day but I still feel like I'm failing from a distance.",
+      "immediate_concern": "tension with local relatives who resent their input",
+      "what_he_needs": "validation that distance caregiving is emotionally brutal"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0072",
+    "persona": {
+      "age": 41,
+      "gender": "female",
+      "care_relationship": "wife",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "heart_failure_home_care",
+      "care_duration_months": 12,
+      "care_hours_weekly": 51,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "physical_strain",
+      "primary_emotion": "pain",
+      "secondary_emotions": [
+        "fear",
+        "resentment"
+      ],
+      "core_concern": "lifting and transfers are injuring the caregiver"
+    },
+    "vulnerability_style": {
+      "tone": "anxious_hopeful",
+      "openness": "medium_low",
+      "resistance_triggers": [
+        "practical_solutions",
+        "being_told_what_to_do"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "My back is shot and I'm scared I'll drop him one of these days.",
+      "immediate_concern": "pride about not wanting to admit physical limits",
+      "what_she_needs": "encouragement to pursue equipment and training without blame"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0073",
+    "persona": {
+      "age": 48,
+      "gender": "male",
+      "care_relationship": "son-in-law",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "cancer_palliative_home",
+      "care_duration_months": 17,
+      "care_hours_weekly": 16,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "boundary_stress",
+      "primary_emotion": "confusion",
+      "secondary_emotions": [
+        "guilt",
+        "fear"
+      ],
+      "core_concern": "recipient's demands or confusion erode basic boundaries"
+    },
+    "vulnerability_style": {
+      "tone": "angry_wounded",
+      "openness": "medium",
+      "resistance_triggers": [
+        "being_told_to_forgive",
+        "family_advice"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I love him, but I'm starting to dread when he wakes up.",
+      "immediate_concern": "shame about dread toward someone vulnerable",
+      "what_he_needs": "support for tiny boundaries that preserve safety and dignity"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0074",
+    "persona": {
+      "age": 55,
+      "gender": "female",
+      "care_relationship": "granddaughter",
+      "living_situation": "rotates_with_sibling"
+    },
+    "care_details": {
+      "recipient_condition": "mixed_dementia",
+      "care_duration_months": 22,
+      "care_hours_weekly": 27,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "family_denial",
+      "primary_emotion": "frustration",
+      "secondary_emotions": [
+        "loneliness",
+        "anger"
+      ],
+      "core_concern": "other relatives minimize decline or block practical steps"
+    },
+    "vulnerability_style": {
+      "tone": "calm_detached",
+      "openness": "medium_high",
+      "resistance_triggers": [
+        "too_many_options",
+        "being_rushed"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "They keep saying she's fine, like I'm exaggerating for attention.",
+      "immediate_concern": "feeling gaslit by people who visit briefly",
+      "what_she_needs": "validation of what they observe day to day"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0075",
+    "persona": {
+      "age": 62,
+      "gender": "male",
+      "care_relationship": "brother",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "alzheimers_moderate",
+      "care_duration_months": 27,
+      "care_hours_weekly": 38,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "lack_of_training",
+      "primary_emotion": "fear",
+      "secondary_emotions": [
+        "shame",
+        "overwhelm"
+      ],
+      "core_concern": "thrown into medical tasks with minimal instruction"
+    },
+    "vulnerability_style": {
+      "tone": "overwhelmed_fragile",
+      "openness": "high",
+      "resistance_triggers": [
+        "toxic_positivity",
+        "minimizing"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "Nobody trained me how to do this\u2014I just started because I had to.",
+      "immediate_concern": "fear of doing harm while improvising",
+      "what_he_needs": "normalizing that hospitals often discharge without enough teaching"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0076",
+    "persona": {
+      "age": 34,
+      "gender": "female",
+      "care_relationship": "daughter",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "copd_home_oxygen",
+      "care_duration_months": 32,
+      "care_hours_weekly": 49,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "substance_coping",
+      "primary_emotion": "shame",
+      "secondary_emotions": [
+        "fear",
+        "numbness"
+      ],
+      "core_concern": "using alcohol or sleep aids to cope and feeling out of control"
+    },
+    "vulnerability_style": {
+      "tone": "tired_resigned",
+      "openness": "low",
+      "resistance_triggers": [
+        "jargon",
+        "medical_mansplaining"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "Some nights I drink more than I'm proud of just to switch off.",
+      "immediate_concern": "fear of judgment if they're honest",
+      "what_she_needs": "nonjudgmental listening first; gentle safety framing"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0077",
+    "persona": {
+      "age": 41,
+      "gender": "male",
+      "care_relationship": "husband",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "kidney_disease_home_dialysis_support",
+      "care_duration_months": 37,
+      "care_hours_weekly": 60,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "holiday_overwhelm",
+      "primary_emotion": "stress",
+      "secondary_emotions": [
+        "sadness",
+        "resentment"
+      ],
+      "core_concern": "traditions and hosting feel impossible on top of care duties"
+    },
+    "vulnerability_style": {
+      "tone": "quiet_sad",
+      "openness": "medium_low",
+      "resistance_triggers": [
+        "comparison_to_other_caregivers",
+        "should_statements"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "The holidays used to mean rest; now they mean extra chaos.",
+      "immediate_concern": "pressure to keep appearances for extended family",
+      "what_he_needs": "validation that seasonal expectations hit caregivers hard"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0078",
+    "persona": {
+      "age": 48,
+      "gender": "female",
+      "care_relationship": "daughter-in-law",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "moderate_dementia",
+      "care_duration_months": 42,
+      "care_hours_weekly": 25,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "insurance_battle",
+      "primary_emotion": "anger",
+      "secondary_emotions": [
+        "exhaustion",
+        "helplessness"
+      ],
+      "core_concern": "paperwork and denials delay needed equipment or services"
+    },
+    "vulnerability_style": {
+      "tone": "tense_apologetic",
+      "openness": "medium",
+      "resistance_triggers": [
+        "advice",
+        "quick_fix_suggestions"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I've spent hours on hold and we still don't have the wheelchair approved.",
+      "immediate_concern": "feeling the system is designed to wear people down",
+      "what_she_needs": "empathy for bureaucracy fatigue before tips"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0079",
+    "persona": {
+      "age": 55,
+      "gender": "male",
+      "care_relationship": "grandson",
+      "living_situation": "rotates_with_sibling"
+    },
+    "care_details": {
+      "recipient_condition": "late_stage_dementia",
+      "care_duration_months": 47,
+      "care_hours_weekly": 36,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "intimacy_change",
+      "primary_emotion": "grief",
+      "secondary_emotions": [
+        "loneliness",
+        "guilt"
+      ],
+      "core_concern": "spousal relationship altered by illness and caregiving roles"
+    },
+    "vulnerability_style": {
+      "tone": "defensive_bitterness",
+      "openness": "medium_high",
+      "resistance_triggers": [
+        "cheerfulness",
+        "silver_linings"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "We're more like nurse and patient than partners now.",
+      "immediate_concern": "guilt for missing intimacy while someone is suffering",
+      "what_he_needs": "space to mourn the marriage they had alongside commitment now"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0080",
+    "persona": {
+      "age": 62,
+      "gender": "female",
+      "care_relationship": "sister",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "early_dementia",
+      "care_duration_months": 52,
+      "care_hours_weekly": 47,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "child_care_overlap",
+      "primary_emotion": "guilt",
+      "secondary_emotions": [
+        "stress",
+        "fear"
+      ],
+      "core_concern": "raising kids while caring for an aging parent in the same home"
+    },
+    "vulnerability_style": {
+      "tone": "rushed_guarded",
+      "openness": "high",
+      "resistance_triggers": [
+        "practical_solutions",
+        "being_told_what_to_do"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I snap at my kids because I'm depleted before breakfast.",
+      "immediate_concern": "fear of damaging their children while honoring elders",
+      "what_she_needs": "validation that competing duties create impossible moments"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0081",
+    "persona": {
+      "age": 34,
+      "gender": "male",
+      "care_relationship": "son",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "parkinsons_late_stage",
+      "care_duration_months": 57,
+      "care_hours_weekly": 58,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "nutrition_hydration_struggle",
+      "primary_emotion": "worry",
+      "secondary_emotions": [
+        "frustration",
+        "guilt"
+      ],
+      "core_concern": "refusal to eat or drink leading to conflict and fear"
+    },
+    "vulnerability_style": {
+      "tone": "numb_flat",
+      "openness": "low",
+      "resistance_triggers": [
+        "being_told_to_forgive",
+        "family_advice"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "Every meal turns into a fight and I hate being the enforcer.",
+      "immediate_concern": "fear of accelerated decline if intake stays low",
+      "what_he_needs": "recognition that eating struggles are common in many conditions"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0082",
+    "persona": {
+      "age": 41,
+      "gender": "female",
+      "care_relationship": "wife",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "stroke_recovery",
+      "care_duration_months": 8,
+      "care_hours_weekly": 23,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "technology_overload",
+      "primary_emotion": "overwhelm",
+      "secondary_emotions": [
+        "shame",
+        "anger"
+      ],
+      "core_concern": "portals, apps, and devices multiply without clear support"
+    },
+    "vulnerability_style": {
+      "tone": "anxious_hopeful",
+      "openness": "medium_low",
+      "resistance_triggers": [
+        "too_many_options",
+        "being_rushed"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I have seven passwords and I still can't find the lab results.",
+      "immediate_concern": "feeling too old or too tired to keep up",
+      "what_she_needs": "patient walkthrough tone without condescension"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0083",
+    "persona": {
+      "age": 48,
+      "gender": "male",
+      "care_relationship": "son-in-law",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "als_early",
+      "care_duration_months": 13,
+      "care_hours_weekly": 34,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "anticipatory_grief_wave",
+      "primary_emotion": "sadness",
+      "secondary_emotions": [
+        "anxiety",
+        "numbness"
+      ],
+      "core_concern": "good days feel borrowed; bad days feel like foreshadowing"
+    },
+    "vulnerability_style": {
+      "tone": "angry_wounded",
+      "openness": "medium",
+      "resistance_triggers": [
+        "toxic_positivity",
+        "minimizing"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "When she's alert, part of me can't enjoy it because I'm bracing.",
+      "immediate_concern": "fear that cherishing moments is denial",
+      "what_he_needs": "permission to feel joy and grief in the same hour"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0084",
+    "persona": {
+      "age": 55,
+      "gender": "female",
+      "care_relationship": "granddaughter",
+      "living_situation": "rotates_with_sibling"
+    },
+    "care_details": {
+      "recipient_condition": "heart_failure_home_care",
+      "care_duration_months": 18,
+      "care_hours_weekly": 45,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "financial_strain",
+      "primary_emotion": "anxiety",
+      "secondary_emotions": [
+        "shame",
+        "anger"
+      ],
+      "core_concern": "medical bills and lost income are squeezing the household"
+    },
+    "vulnerability_style": {
+      "tone": "calm_detached",
+      "openness": "medium_high",
+      "resistance_triggers": [
+        "jargon",
+        "medical_mansplaining"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "We're one surprise expense away from not making rent.",
+      "immediate_concern": "whether talking about money makes them look irresponsible",
+      "what_she_needs": "practical empathy before budgeting lectures"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0085",
+    "persona": {
+      "age": 62,
+      "gender": "male",
+      "care_relationship": "brother",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "cancer_palliative_home",
+      "care_duration_months": 23,
+      "care_hours_weekly": 56,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "role_reversal",
+      "primary_emotion": "disorientation",
+      "secondary_emotions": [
+        "grief",
+        "resentment"
+      ],
+      "core_concern": "parent now depends on them for basics they used to handle alone"
+    },
+    "vulnerability_style": {
+      "tone": "overwhelmed_fragile",
+      "openness": "high",
+      "resistance_triggers": [
+        "comparison_to_other_caregivers",
+        "should_statements"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I keep catching myself wanting my mom back\u2014the one who took care of me.",
+      "immediate_concern": "feeling childish for resenting someone who is ill",
+      "what_he_needs": "permission to grieve the old relationship while showing up now"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0086",
+    "persona": {
+      "age": 34,
+      "gender": "female",
+      "care_relationship": "daughter",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "mixed_dementia",
+      "care_duration_months": 28,
+      "care_hours_weekly": 21,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "sleep_deprivation",
+      "primary_emotion": "exhaustion",
+      "secondary_emotions": [
+        "irritability",
+        "fear"
+      ],
+      "core_concern": "nightly wakings and safety worries prevent real rest"
+    },
+    "vulnerability_style": {
+      "tone": "tired_resigned",
+      "openness": "low",
+      "resistance_triggers": [
+        "advice",
+        "quick_fix_suggestions"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I haven't slept through the night in months.",
+      "immediate_concern": "fear that admitting exhaustion means they cannot cope",
+      "what_she_needs": "to be seen as human, not a machine that should tough it out"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0087",
+    "persona": {
+      "age": 41,
+      "gender": "male",
+      "care_relationship": "husband",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "alzheimers_moderate",
+      "care_duration_months": 33,
+      "care_hours_weekly": 32,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "medical_uncertainty",
+      "primary_emotion": "fear",
+      "secondary_emotions": [
+        "helplessness",
+        "guilt"
+      ],
+      "core_concern": "conflicting advice from specialists and unclear prognosis"
+    },
+    "vulnerability_style": {
+      "tone": "quiet_sad",
+      "openness": "medium_low",
+      "resistance_triggers": [
+        "cheerfulness",
+        "silver_linings"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "Every appointment seems to add a new possible diagnosis.",
+      "immediate_concern": "not knowing which expert to trust",
+      "what_he_needs": "a calm partner to sort information without hype"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0088",
+    "persona": {
+      "age": 48,
+      "gender": "female",
+      "care_relationship": "daughter-in-law",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "copd_home_oxygen",
+      "care_duration_months": 38,
+      "care_hours_weekly": 43,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "social_isolation",
+      "primary_emotion": "loneliness",
+      "secondary_emotions": [
+        "envy",
+        "bitterness"
+      ],
+      "core_concern": "friends drifted away; calendar is only appointments"
+    },
+    "vulnerability_style": {
+      "tone": "tense_apologetic",
+      "openness": "medium",
+      "resistance_triggers": [
+        "practical_solutions",
+        "being_told_what_to_do"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I can't remember the last time I did something just for fun.",
+      "immediate_concern": "embarrassment about how small their life has become",
+      "what_she_needs": "connection without fixing their whole social life in one chat"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0089",
+    "persona": {
+      "age": 55,
+      "gender": "male",
+      "care_relationship": "grandson",
+      "living_situation": "rotates_with_sibling"
+    },
+    "care_details": {
+      "recipient_condition": "kidney_disease_home_dialysis_support",
+      "care_duration_months": 43,
+      "care_hours_weekly": 54,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "work_care_conflict",
+      "primary_emotion": "stress",
+      "secondary_emotions": [
+        "guilt",
+        "fear"
+      ],
+      "core_concern": "job demands clash with unpredictable care emergencies"
+    },
+    "vulnerability_style": {
+      "tone": "defensive_bitterness",
+      "openness": "medium_high",
+      "resistance_triggers": [
+        "being_told_to_forgive",
+        "family_advice"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "My manager is polite, but I can tell the absences are adding up.",
+      "immediate_concern": "worry about being seen as unreliable",
+      "what_he_needs": "validation that the tradeoffs are brutal, not a personal failing"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0090",
+    "persona": {
+      "age": 62,
+      "gender": "female",
+      "care_relationship": "sister",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "moderate_dementia",
+      "care_duration_months": 48,
+      "care_hours_weekly": 19,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "sibling_resentment",
+      "primary_emotion": "anger",
+      "secondary_emotions": [
+        "hurt",
+        "fatigue"
+      ],
+      "core_concern": "uneven division of labor with siblings who are absent or critical"
+    },
+    "vulnerability_style": {
+      "tone": "rushed_guarded",
+      "openness": "high",
+      "resistance_triggers": [
+        "too_many_options",
+        "being_rushed"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I'm the one on call, and they still question every decision I make.",
+      "immediate_concern": "whether anger makes them the bad guy in the family story",
+      "what_she_needs": "support for boundaries before family harmony pep talks"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0091",
+    "persona": {
+      "age": 34,
+      "gender": "male",
+      "care_relationship": "son",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "late_stage_dementia",
+      "care_duration_months": 53,
+      "care_hours_weekly": 30,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "identity_loss",
+      "primary_emotion": "sadness",
+      "secondary_emotions": [
+        "numbness",
+        "guilt"
+      ],
+      "core_concern": "caregiving consumed hobbies, relationships, and sense of self"
+    },
+    "vulnerability_style": {
+      "tone": "numb_flat",
+      "openness": "low",
+      "resistance_triggers": [
+        "toxic_positivity",
+        "minimizing"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I look in the mirror and barely recognize who I've become.",
+      "immediate_concern": "fear that wanting a life outside care is abandonment",
+      "what_he_needs": "permission to miss their old life without guilt"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0092",
+    "persona": {
+      "age": 41,
+      "gender": "female",
+      "care_relationship": "wife",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "early_dementia",
+      "care_duration_months": 58,
+      "care_hours_weekly": 41,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "behavioral_symptoms",
+      "primary_emotion": "fear",
+      "secondary_emotions": [
+        "shame",
+        "exhaustion"
+      ],
+      "core_concern": "agitation, wandering, or verbal outbursts in public or at night"
+    },
+    "vulnerability_style": {
+      "tone": "anxious_hopeful",
+      "openness": "medium_low",
+      "resistance_triggers": [
+        "jargon",
+        "medical_mansplaining"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "Last night he screamed at me for an hour and I didn't know what to do.",
+      "immediate_concern": "fear of what neighbors or friends think",
+      "what_she_needs": "validation that behavioral symptoms are medically driven, not personal attacks"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0093",
+    "persona": {
+      "age": 48,
+      "gender": "male",
+      "care_relationship": "son-in-law",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "parkinsons_late_stage",
+      "care_duration_months": 9,
+      "care_hours_weekly": 52,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "medication_fear",
+      "primary_emotion": "anxiety",
+      "secondary_emotions": [
+        "guilt",
+        "confusion"
+      ],
+      "core_concern": "complex med schedules and fear of dangerous mistakes"
+    },
+    "vulnerability_style": {
+      "tone": "angry_wounded",
+      "openness": "medium",
+      "resistance_triggers": [
+        "comparison_to_other_caregivers",
+        "should_statements"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I'm scared I'll miss a dose or give the wrong pill when I'm half awake.",
+      "immediate_concern": "whether one mistake could cause serious harm",
+      "what_he_needs": "normalizing how hard med management is at 2 a.m."
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0094",
+    "persona": {
+      "age": 55,
+      "gender": "female",
+      "care_relationship": "granddaughter",
+      "living_situation": "rotates_with_sibling"
+    },
+    "care_details": {
+      "recipient_condition": "stroke_recovery",
+      "care_duration_months": 14,
+      "care_hours_weekly": 17,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "placement_guilt",
+      "primary_emotion": "guilt",
+      "secondary_emotions": [
+        "grief",
+        "relief_shame"
+      ],
+      "core_concern": "considering residential care feels like betrayal"
+    },
+    "vulnerability_style": {
+      "tone": "calm_detached",
+      "openness": "medium_high",
+      "resistance_triggers": [
+        "advice",
+        "quick_fix_suggestions"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "Even thinking about a facility makes me feel like I gave up on her.",
+      "immediate_concern": "cultural or family narratives about duty",
+      "what_she_needs": "space to weigh values without being pushed to decide today"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0095",
+    "persona": {
+      "age": 62,
+      "gender": "male",
+      "care_relationship": "brother",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "als_early",
+      "care_duration_months": 19,
+      "care_hours_weekly": 28,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "cultural_stigma",
+      "primary_emotion": "isolation",
+      "secondary_emotions": [
+        "anger",
+        "shame"
+      ],
+      "core_concern": "community expectations conflict with personal limits"
+    },
+    "vulnerability_style": {
+      "tone": "overwhelmed_fragile",
+      "openness": "high",
+      "resistance_triggers": [
+        "cheerfulness",
+        "silver_linings"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "In our family you're not supposed to admit you need help.",
+      "immediate_concern": "fear of gossip or disapproval",
+      "what_he_needs": "validation that seeking help can coexist with love"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0096",
+    "persona": {
+      "age": 34,
+      "gender": "female",
+      "care_relationship": "daughter",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "heart_failure_home_care",
+      "care_duration_months": 24,
+      "care_hours_weekly": 39,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "young_onset_caregiver",
+      "primary_emotion": "overwhelm",
+      "secondary_emotions": [
+        "anger",
+        "loneliness"
+      ],
+      "core_concern": "peers do not understand caregiving at their age"
+    },
+    "vulnerability_style": {
+      "tone": "tired_resigned",
+      "openness": "low",
+      "resistance_triggers": [
+        "practical_solutions",
+        "being_told_what_to_do"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "My friends are planning trips; I'm scheduling wound care.",
+      "immediate_concern": "feeling left behind socially",
+      "what_she_needs": "acknowledgment that young caregivers exist and face unique losses"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0097",
+    "persona": {
+      "age": 41,
+      "gender": "male",
+      "care_relationship": "husband",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "cancer_palliative_home",
+      "care_duration_months": 29,
+      "care_hours_weekly": 50,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "long_distance_guilt",
+      "primary_emotion": "guilt",
+      "secondary_emotions": [
+        "helplessness",
+        "anxiety"
+      ],
+      "core_concern": "lives far away and relies on updates that feel incomplete"
+    },
+    "vulnerability_style": {
+      "tone": "quiet_sad",
+      "openness": "medium_low",
+      "resistance_triggers": [
+        "being_told_to_forgive",
+        "family_advice"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I call every day but I still feel like I'm failing from a distance.",
+      "immediate_concern": "tension with local relatives who resent their input",
+      "what_he_needs": "validation that distance caregiving is emotionally brutal"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0098",
+    "persona": {
+      "age": 48,
+      "gender": "female",
+      "care_relationship": "daughter-in-law",
+      "living_situation": "lives_with_recipient"
+    },
+    "care_details": {
+      "recipient_condition": "mixed_dementia",
+      "care_duration_months": 34,
+      "care_hours_weekly": 15,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "physical_strain",
+      "primary_emotion": "pain",
+      "secondary_emotions": [
+        "fear",
+        "resentment"
+      ],
+      "core_concern": "lifting and transfers are injuring the caregiver"
+    },
+    "vulnerability_style": {
+      "tone": "tense_apologetic",
+      "openness": "medium",
+      "resistance_triggers": [
+        "too_many_options",
+        "being_rushed"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "My back is shot and I'm scared I'll drop him one of these days.",
+      "immediate_concern": "pride about not wanting to admit physical limits",
+      "what_she_needs": "encouragement to pursue equipment and training without blame"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0099",
+    "persona": {
+      "age": 55,
+      "gender": "male",
+      "care_relationship": "grandson",
+      "living_situation": "rotates_with_sibling"
+    },
+    "care_details": {
+      "recipient_condition": "alzheimers_moderate",
+      "care_duration_months": 39,
+      "care_hours_weekly": 26,
+      "has_other_support": false
+    },
+    "scenario": {
+      "type": "boundary_stress",
+      "primary_emotion": "confusion",
+      "secondary_emotions": [
+        "guilt",
+        "fear"
+      ],
+      "core_concern": "recipient's demands or confusion erode basic boundaries"
+    },
+    "vulnerability_style": {
+      "tone": "defensive_bitterness",
+      "openness": "medium_high",
+      "resistance_triggers": [
+        "toxic_positivity",
+        "minimizing"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "I love him, but I'm starting to dread when he wakes up.",
+      "immediate_concern": "shame about dread toward someone vulnerable",
+      "what_he_needs": "support for tiny boundaries that preserve safety and dignity"
+    },
+    "metadata": {
+      "source": "generated",
+      "version": "role_card_v2"
+    }
+  },
+  {
+    "role_card_id": "cg_0100",
+    "persona": {
+      "age": 62,
+      "gender": "female",
+      "care_relationship": "sister",
+      "living_situation": "lives_nearby"
+    },
+    "care_details": {
+      "recipient_condition": "copd_home_oxygen",
+      "care_duration_months": 44,
+      "care_hours_weekly": 37,
+      "has_other_support": true
+    },
+    "scenario": {
+      "type": "family_denial",
+      "primary_emotion": "frustration",
+      "secondary_emotions": [
+        "loneliness",
+        "anger"
+      ],
+      "core_concern": "other relatives minimize decline or block practical steps"
+    },
+    "vulnerability_style": {
+      "tone": "rushed_guarded",
+      "openness": "high",
+      "resistance_triggers": [
+        "jargon",
+        "medical_mansplaining"
+      ]
+    },
+    "conversation_seed": {
+      "opening_message": "They keep saying she's fine, like I'm exaggerating for attention.",
+      "immediate_concern": "feeling gaslit by people who visit briefly",
+      "what_she_needs": "validation of what they observe day to day"
+    },
+    "metadata": {
+      "source": "generated",
       "version": "role_card_v2"
     }
   }

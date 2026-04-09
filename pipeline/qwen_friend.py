@@ -1,8 +1,26 @@
 from __future__ import annotations
 
+import warnings
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
+
+ADAPTER_CONFIG_NAME = "adapter_config.json"
+
+
+def _load_pretrained_with_local_fallback(
+    loader: Any,
+    pretrained_id: str,
+    **kwargs: Any,
+) -> Any:
+    try:
+        return loader.from_pretrained(
+            pretrained_id,
+            local_files_only=True,
+            **kwargs,
+        )
+    except OSError:
+        return loader.from_pretrained(pretrained_id, **kwargs)
 
 
 @dataclass
@@ -14,23 +32,23 @@ class QwenCaregiverFriendAgent:
     max_new_tokens: int = 128
     temperature: float = 0.7
     _pipeline: Any = field(default=None, init=False, repr=False)
+    _tokenizer: Any = field(default=None, init=False, repr=False)
+    _generation_config: Any = field(default=None, init=False, repr=False)
 
     def __post_init__(self) -> None:
-        from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
+        from transformers import (
+            AutoModelForCausalLM,
+            AutoTokenizer,
+            GenerationConfig,
+            pipeline,
+        )
         from peft import PeftModel
 
         model_path = str(self._resolve_model_path())
+        device_map = self._get_device_map()
 
-        tokenizer = AutoTokenizer.from_pretrained(
-            self.base_model,
-            trust_remote_code=True,
-        )
-        base = AutoModelForCausalLM.from_pretrained(
-            self.base_model,
-            torch_dtype="auto",
-            device_map="auto",
-            trust_remote_code=True,
-        )
+        self._tokenizer = self._load_tokenizer(AutoTokenizer)
+        base = self._load_base_model(AutoModelForCausalLM, device_map)
         model = PeftModel.from_pretrained(
             base,
             model_path,
@@ -38,12 +56,32 @@ class QwenCaregiverFriendAgent:
         )
         model.eval()
 
+        self._generation_config = GenerationConfig(
+            max_new_tokens=self.max_new_tokens,
+            do_sample=self.temperature > 0,
+            temperature=self.temperature if self.temperature > 0 else 1.0,
+            eos_token_id=self._tokenizer.eos_token_id,
+            pad_token_id=self._tokenizer.eos_token_id,
+        )
+
         self._pipeline = pipeline(
             "text-generation",
             model=model,
-            tokenizer=tokenizer,
-            device_map="auto",
+            tokenizer=self._tokenizer,
         )
+
+    def _model_directory_candidates(self) -> list[Path]:
+        configured_path = Path(self.model_path).expanduser()
+        if configured_path.is_absolute():
+            return [configured_path]
+        repo_root = Path(__file__).resolve().parent.parent
+        demo_run = Path("runs") / "run_demo_openai"
+        return [
+            repo_root / configured_path,
+            repo_root / demo_run / configured_path,
+            Path.cwd() / configured_path,
+            Path.cwd() / demo_run / configured_path,
+        ]
 
     def reply(self, transcript: list[dict[str, Any]]) -> str:
         messages = [
@@ -54,10 +92,15 @@ class QwenCaregiverFriendAgent:
             {"role": "user", "content": self._build_prompt(transcript)},
         ]
 
-        result = self._pipeline(
+        prompt = self._tokenizer.apply_chat_template(
             messages,
-            max_new_tokens=self.max_new_tokens,
-            temperature=self.temperature,
+            tokenize=False,
+            add_generation_prompt=True,
+        )
+
+        result = self._pipeline(
+            prompt,
+            generation_config=self._generation_config,
             return_full_text=False,
         )
 
@@ -70,24 +113,45 @@ class QwenCaregiverFriendAgent:
         return f"Continue the conversation.\n\n{transcript_text}"
 
     def _resolve_model_path(self) -> Path:
-        configured_path = Path(self.model_path).expanduser()
-        if configured_path.is_absolute():
-            candidates = [configured_path]
-        else:
-            repo_root = Path(__file__).resolve().parent.parent
-            candidates = [
-                repo_root / configured_path,
-                repo_root / "runs" / "run_demo_openai" / configured_path,
-                Path.cwd() / configured_path,
-                Path.cwd() / "runs" / "run_demo_openai" / configured_path,
-            ]
-
+        candidates = self._model_directory_candidates()
         for candidate in candidates:
-            if (candidate / "adapter_config.json").is_file():
+            if (candidate / ADAPTER_CONFIG_NAME).is_file():
                 return candidate
 
         searched = "\n".join(str(candidate) for candidate in candidates)
         raise FileNotFoundError(
             "Could not find qwen adapter directory containing adapter_config.json. "
             f"Checked:\n{searched}"
+        )
+
+    def _get_device_map(self) -> str | None:
+        import torch
+
+        with warnings.catch_warnings():
+            warnings.filterwarnings(
+                "ignore",
+                message="CUDA initialization: The NVIDIA driver on your system is too old.*",
+            )
+            has_cuda = torch.cuda.is_available()
+
+        return "auto" if has_cuda else None
+
+    def _load_tokenizer(self, auto_tokenizer: Any) -> Any:
+        return _load_pretrained_with_local_fallback(
+            auto_tokenizer,
+            self.base_model,
+            trust_remote_code=True,
+        )
+
+    def _load_base_model(self, auto_model: Any, device_map: str | None) -> Any:
+        model_kwargs: dict[str, Any] = {
+            "torch_dtype": "auto",
+            "trust_remote_code": True,
+        }
+        if device_map is not None:
+            model_kwargs["device_map"] = device_map
+        return _load_pretrained_with_local_fallback(
+            auto_model,
+            self.base_model,
+            **model_kwargs,
         )
