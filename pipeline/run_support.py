@@ -69,6 +69,7 @@ def run_tagged_conversations(
     *,
     max_turns_per_side: int | None = None,
     verbose: bool = False,
+    skip_existing: bool = False,
 ) -> None:
     from .runner import run_conversation
     from .tagger import tag_transcript_file
@@ -85,6 +86,22 @@ def run_tagged_conversations(
         conversation_id = f"conv_{index:04d}"
         transcript_path = conversations_dir / f"{conversation_id}.json"
         tag_path = tags_dir / f"{conversation_id}.tags.json"
+        if skip_existing and transcript_path.is_file() and tag_path.is_file():
+            if verbose:
+                print(f"Skipping {conversation_id} (already complete)", flush=True)
+            continue
+        if skip_existing and transcript_path.is_file() and not tag_path.is_file():
+            if verbose:
+                print(f"Tagging {conversation_id} (transcript exists)...", flush=True)
+            tag_transcript_file(
+                transcript_path=transcript_path, output_path=tag_path, tagger=turn_tagger
+            )
+            if verbose:
+                print(
+                    f"  -> tagged ({transcript_path.stat().st_size} bytes)",
+                    flush=True,
+                )
+            continue
         if verbose:
             print(f"Running {conversation_id}...", flush=True)
         run_conversation(
@@ -104,6 +121,48 @@ def run_tagged_conversations(
                 f"  -> completed ({transcript_path.stat().st_size} bytes)",
                 flush=True,
             )
+
+
+def resume_tagged_run(
+    run_dir: Path,
+    victim_agent: Any,
+    friend_agent: Any,
+    turn_tagger: Any,
+    *,
+    verbose: bool = False,
+    max_turns_per_side: int | None = None,
+) -> Path:
+    run_dir = run_dir.resolve()
+    if not run_dir.is_dir():
+        raise FileNotFoundError(f"Run directory not found: {run_dir}")
+    config_path = run_dir / "config" / "run-config.json"
+    snapshot_path = run_dir / "role-cards" / "role_cards.snapshot.json"
+    if not config_path.is_file():
+        raise FileNotFoundError(f"Missing run config: {config_path}")
+    if not snapshot_path.is_file():
+        raise FileNotFoundError(f"Missing role card snapshot: {snapshot_path}")
+    config = json.loads(config_path.read_text(encoding="utf-8"))
+    run_id = config["run_id"]
+    role_cards = json.loads(snapshot_path.read_text(encoding="utf-8"))
+    limit = max_turns_per_side
+    if limit is None and "max_turns_per_side" in config:
+        limit = int(config["max_turns_per_side"])
+    run_tagged_conversations(
+        run_dir,
+        run_id,
+        role_cards,
+        victim_agent,
+        friend_agent,
+        turn_tagger,
+        verbose=verbose,
+        max_turns_per_side=limit,
+        skip_existing=True,
+    )
+    n = len(role_cards)
+    print(f"Run directory: {run_dir}", flush=True)
+    print(f"Wrote up to {n} conversations under {run_dir / 'conversations'}", flush=True)
+    print(f"Wrote up to {n} tag files under {run_dir / 'tags'}", flush=True)
+    return run_dir
 
 
 def execute_timestamped_tagged_run(

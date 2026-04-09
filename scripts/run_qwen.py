@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import sys
 from pathlib import Path
 
@@ -16,7 +17,7 @@ from pipeline.openai_victim import OpenAIVictimAgent
 from pipeline.prompts import BRIEF_FRIEND_PROMPT, OPENAI_ROLEPLAY_VICTIM_PROMPT
 from pipeline.qwen_friend import QwenCaregiverFriendAgent
 from pipeline.role_cards import all_role_cards
-from pipeline.run_support import execute_timestamped_tagged_run
+from pipeline.run_support import execute_timestamped_tagged_run, resume_tagged_run
 
 
 BASE_DIR = _REPO_ROOT
@@ -24,6 +25,32 @@ RUN_PREFIX = "run_demo_qwen"
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Run Qwen friend + OpenAI victim/tagger pipeline.")
+    parser.add_argument(
+        "--resume",
+        type=Path,
+        metavar="RUN_DIR",
+        help="Resume a run (path under runs/, e.g. runs/run_demo_qwen_20260101_120000_000000)",
+    )
+    args = parser.parse_args()
+
+    victim_agent = OpenAIVictimAgent()
+    friend_agent = QwenCaregiverFriendAgent()
+    turn_tagger = OpenAITurnTagger()
+
+    if args.resume is not None:
+        run_dir = args.resume
+        if not run_dir.is_absolute():
+            run_dir = BASE_DIR / run_dir
+        resume_tagged_run(
+            run_dir,
+            victim_agent,
+            friend_agent,
+            turn_tagger,
+            verbose=True,
+        )
+        return
+
     role_cards = all_role_cards()
     execute_timestamped_tagged_run(
         BASE_DIR,
@@ -34,9 +61,9 @@ def main() -> None:
         tagger_key="openai_tagger",
         victim_prompt=OPENAI_ROLEPLAY_VICTIM_PROMPT,
         friend_prompt=BRIEF_FRIEND_PROMPT,
-        victim_agent=OpenAIVictimAgent(),
-        friend_agent=QwenCaregiverFriendAgent(),
-        turn_tagger=OpenAITurnTagger(),
+        victim_agent=victim_agent,
+        friend_agent=friend_agent,
+        turn_tagger=turn_tagger,
         verbose=True,
     )
 
