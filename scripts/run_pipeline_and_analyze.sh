@@ -10,6 +10,9 @@ case "${MODE}" in
   qwen)
     RUN_SCRIPT="${SCRIPT_DIR}/run_qwen.py"
     ;;
+  qwen_base)
+    RUN_SCRIPT="${SCRIPT_DIR}/run_qwen_base.py"
+    ;;
   openai)
     RUN_SCRIPT="${SCRIPT_DIR}/run_openai.py"
     ;;
@@ -17,7 +20,7 @@ case "${MODE}" in
     RUN_SCRIPT="${SCRIPT_DIR}/dry_run_pipeline.py"
     ;;
   *)
-    echo "Usage: $0 {qwen|openai|dry|simple}" >&2
+    echo "Usage: $0 {qwen|qwen_base|openai|dry|simple}" >&2
     exit 1
     ;;
 esac

@@ -29,6 +29,7 @@ class QwenCaregiverFriendAgent:
     version: str = "friend_qwen_caregiver_v1"
     model_path: str = "qwen-caregiver-model"
     base_model: str = "Qwen/Qwen2.5-7B-Instruct"
+    use_peft_adapter: bool = True
     max_new_tokens: int = 128
     temperature: float = 0.7
     _pipeline: Any = field(default=None, init=False, repr=False)
@@ -42,18 +43,22 @@ class QwenCaregiverFriendAgent:
             GenerationConfig,
             pipeline,
         )
-        from peft import PeftModel
 
-        model_path = str(self._resolve_model_path())
         device_map = self._get_device_map()
 
         self._tokenizer = self._load_tokenizer(AutoTokenizer)
         base = self._load_base_model(AutoModelForCausalLM, device_map)
-        model = PeftModel.from_pretrained(
-            base,
-            model_path,
-            local_files_only=True,
-        )
+        if self.use_peft_adapter:
+            from peft import PeftModel
+
+            model_path = str(self._resolve_model_path())
+            model = PeftModel.from_pretrained(
+                base,
+                model_path,
+                local_files_only=True,
+            )
+        else:
+            model = base
         model.eval()
 
         self._generation_config = GenerationConfig(
