@@ -8,6 +8,16 @@ from .openai_client import OpenAIChatClient
 
 
 ALLOWED_STRUCTURES = {"question", "reflection", "suggestion", "hybrid"}
+STRUCTURE_FROM_STRATEGY_CONFUSION = {
+    "support": "reflection",
+    "reflect": "reflection",
+    "validate": "reflection",
+    "reframe": "reflection",
+    "probe": "question",
+    "suggest": "suggestion",
+    "plan": "suggestion",
+    "other": "hybrid",
+}
 ALLOWED_PRIMARY_STRATEGIES = {
     "probe",
     "reflect",
@@ -91,7 +101,7 @@ class OpenAITurnTagger:
         return f"""
 Tag the final friend turn in the transcript.
 
-Allowed structure labels:
+Allowed structure labels (utterance shape only; never use a primary_strategy name here):
 - question
 - reflection
 - suggestion
@@ -148,8 +158,14 @@ Return this JSON shape:
         notes = payload.get("notes", "")
         confidence = payload.get("confidence", 0.0)
 
+        if isinstance(structure, str):
+            key = structure.strip().lower()
+            if key in ALLOWED_STRUCTURES:
+                structure = key
+            elif key in STRUCTURE_FROM_STRATEGY_CONFUSION:
+                structure = STRUCTURE_FROM_STRATEGY_CONFUSION[key]
         if structure not in ALLOWED_STRUCTURES:
-            raise ValueError(f"invalid structure: {structure}")
+            raise ValueError(f"invalid structure: {payload['structure']}")
         if primary_strategy not in ALLOWED_PRIMARY_STRATEGIES:
             raise ValueError(f"invalid primary_strategy: {primary_strategy}")
         if not isinstance(secondary_strategies, list):
