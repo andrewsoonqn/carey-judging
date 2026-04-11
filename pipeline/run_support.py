@@ -70,6 +70,7 @@ def run_tagged_conversations(
     max_turns_per_side: int | None = None,
     verbose: bool = False,
     skip_existing: bool = False,
+    start_from: int | None = None,
 ) -> None:
     from .runner import run_conversation
     from .tagger import tag_transcript_file
@@ -82,7 +83,10 @@ def run_tagged_conversations(
     conversations_dir = run_dir / "conversations"
     tags_dir = run_dir / "tags"
 
+    first_index = max(start_from or 1, 1)
     for index, role_card in enumerate(role_cards, start=1):
+        if index < first_index:
+            continue
         conversation_id = f"conv_{index:04d}"
         transcript_path = conversations_dir / f"{conversation_id}.json"
         tag_path = tags_dir / f"{conversation_id}.tags.json"
@@ -131,6 +135,7 @@ def resume_tagged_run(
     *,
     verbose: bool = False,
     max_turns_per_side: int | None = None,
+    start_from: int | None = None,
 ) -> Path:
     run_dir = run_dir.resolve()
     if not run_dir.is_dir():
@@ -156,7 +161,8 @@ def resume_tagged_run(
         turn_tagger,
         verbose=verbose,
         max_turns_per_side=limit,
-        skip_existing=True,
+        skip_existing=start_from is None,
+        start_from=start_from,
     )
     n = len(role_cards)
     print(f"Run directory: {run_dir}", flush=True)

@@ -32,7 +32,16 @@ def main() -> None:
         metavar="RUN_DIR",
         help="Resume a run (path under runs/, e.g. runs/run_demo_qwen_20260101_120000_000000)",
     )
+    parser.add_argument(
+        "--start",
+        type=int,
+        metavar="N",
+        help="Start from conversation N (1-based). Requires --resume to identify the run directory.",
+    )
     args = parser.parse_args()
+
+    if args.start is not None and args.resume is None:
+        parser.error("--start requires --resume to identify the run directory")
 
     victim_agent = OpenAIVictimAgent()
     friend_agent = QwenCaregiverFriendAgent()
@@ -48,6 +57,7 @@ def main() -> None:
             friend_agent,
             turn_tagger,
             verbose=True,
+            start_from=args.start,
         )
         return
 
