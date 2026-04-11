@@ -191,7 +191,7 @@ class AITurnTagger:
         }
 ```
 
-Then wire those classes into `scripts/dry_run_pipeline.py`, `scripts/run_openai.py`, `scripts/run_qwen.py`, or a future batch runner.
+Then wire those classes into `scripts/dry_run_pipeline.py`, `scripts/run_openai.py`, `scripts/run_qwen.py`, `scripts/run_qwen_base.py`, or a future batch runner.
 
 ## Role Card Schema
 
