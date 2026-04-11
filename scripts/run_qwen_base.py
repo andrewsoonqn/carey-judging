@@ -40,10 +40,16 @@ def main() -> None:
         metavar="N",
         help="Start from conversation N (1-based). Requires --resume to identify the run directory.",
     )
+    parser.add_argument(
+        "--end",
+        type=int,
+        metavar="N",
+        help="End at conversation N inclusive (1-based). Requires --resume to identify the run directory.",
+    )
     args = parser.parse_args()
 
-    if args.start is not None and args.resume is None:
-        parser.error("--start requires --resume to identify the run directory")
+    if (args.start is not None or args.end is not None) and args.resume is None:
+        parser.error("--start/--end require --resume to identify the run directory")
 
     victim_agent = OpenAIVictimAgent()
     friend_agent = QwenCaregiverFriendAgent(
@@ -64,6 +70,7 @@ def main() -> None:
             turn_tagger,
             verbose=True,
             start_from=args.start,
+            end_at=args.end,
         )
         return
 
