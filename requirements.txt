@@ -1,3 +1,6 @@
+altair>=5.4
+marimo
+pandas>=2.2
 python-dotenv>=1.0.0
 transformers>=4.40.0
 peft>=0.10.0

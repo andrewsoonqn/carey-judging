@@ -19,7 +19,7 @@ def _():
     import json
     import math
     import sys
-    from datetime import datetime, timezone
+    from collections import Counter, defaultdict
     from html import escape
     from pathlib import Path
 
@@ -33,64 +33,172 @@ def _():
         sys.path.insert(0, str(REPO_ROOT))
 
     load_dotenv(REPO_ROOT / ".env")
-
-    from pipeline.analysis import analyze_run
-    from pipeline.openai_tagger import OpenAITurnTagger
-    from pipeline.simple_components import HeuristicTurnTagger
-    from pipeline.tagger import tag_transcript_file
-
     return (
-        HeuristicTurnTagger,
-        OpenAITurnTagger,
+        Counter,
+        Path,
         REPO_ROOT,
         alt,
-        analyze_run,
-        datetime,
+        defaultdict,
         escape,
         json,
         math,
         mo,
         pd,
-        tag_transcript_file,
-        timezone,
     )
 
 
 @app.cell
 def _(REPO_ROOT):
     FINAL_RUNS_ROOT = REPO_ROOT / "final_runs"
-    EXPORT_DIRNAME = "notebook_review"
-    return EXPORT_DIRNAME, FINAL_RUNS_ROOT
+    return (FINAL_RUNS_ROOT,)
 
 
 @app.cell(hide_code=True)
-def _(
-    EXPORT_DIRNAME,
-    FINAL_RUNS_ROOT,
-    HeuristicTurnTagger,
-    OpenAITurnTagger,
-    analyze_run,
-    datetime,
-    escape,
-    json,
-    math,
-    pd,
-    tag_transcript_file,
-    timezone,
-):
+def _(Counter, FINAL_RUNS_ROOT, Path, defaultdict, escape, json, math, pd):
     def load_json(path):
         return json.loads(path.read_text(encoding="utf-8"))
 
-    def load_jsonl(path):
-        if not path.is_file():
-            return []
-        rows = []
-        with path.open("r", encoding="utf-8") as handle:
-            for line in handle:
-                line = line.strip()
-                if line:
-                    rows.append(json.loads(line))
-        return rows
+    def analyze_run(run_dir):
+        run_dir = Path(run_dir)
+        tags_dir = run_dir / "tags"
+
+        tag_payloads = [
+            load_json(path) for path in sorted(tags_dir.glob("*.tags.json"))
+        ]
+        per_turn_rows = []
+        conversation_rows = []
+
+        overall_strategy_counts = Counter()
+        structure_by_turn = defaultdict(Counter)
+        strategy_by_turn = defaultdict(Counter)
+        same_strategy_percentages = []
+        total_friend_turns = 0
+
+        for payload in tag_payloads:
+            strategies = []
+            structures = []
+            per_conversation_strategy_counts = Counter()
+
+            for tag in payload["friend_turn_tags"]:
+                per_turn_rows.append(
+                    {
+                        "run_id": payload["run_id"],
+                        "conversation_id": payload["conversation_id"],
+                        "role_card_id": payload["role_card_id"],
+                        "friend_turn_index": tag["friend_turn_index"],
+                        "message_position_1_based": tag["message_position_1_based"],
+                        "structure": tag["structure"],
+                        "primary_strategy": tag["primary_strategy"],
+                        "secondary_strategies": "|".join(tag["secondary_strategies"]),
+                        "confidence": tag.get("confidence", ""),
+                        "tagger_version": payload["tagger"]["tagger_version"],
+                        "taxonomy_version": payload["tagger"]["taxonomy_version"],
+                    }
+                )
+
+                strategies.append(tag["primary_strategy"])
+                structures.append(tag["structure"])
+                per_conversation_strategy_counts[tag["primary_strategy"]] += 1
+                overall_strategy_counts[tag["primary_strategy"]] += 1
+                structure_by_turn[tag["friend_turn_index"]][tag["structure"]] += 1
+                strategy_by_turn[tag["friend_turn_index"]][tag["primary_strategy"]] += 1
+                total_friend_turns += 1
+
+            dominant_strategy = ""
+            dominant_share = 0.0
+            same_primary_strategy_percentage = 0.0
+            if per_conversation_strategy_counts:
+                dominant_strategy, dominant_count = (
+                    per_conversation_strategy_counts.most_common(1)[0]
+                )
+                dominant_share = dominant_count / len(strategies)
+                same_primary_strategy_percentage = dominant_share * 100
+                same_strategy_percentages.append(same_primary_strategy_percentage)
+
+            conversation_rows.append(
+                {
+                    "run_id": payload["run_id"],
+                    "conversation_id": payload["conversation_id"],
+                    "role_card_id": payload["role_card_id"],
+                    "friend_turn_count": len(strategies),
+                    "unique_primary_strategies": len(set(strategies)),
+                    "dominant_primary_strategy": dominant_strategy,
+                    "dominant_primary_strategy_share": round(dominant_share, 4),
+                    "same_primary_strategy_percentage": round(
+                        same_primary_strategy_percentage, 2
+                    ),
+                    "all_same_primary_strategy": len(set(strategies)) == 1,
+                    "strategy_sequence": "|".join(strategies),
+                    "structure_sequence": "|".join(structures),
+                }
+            )
+
+        overall_strategy_share = []
+        for strategy, count in sorted(overall_strategy_counts.items()):
+            overall_strategy_share.append(
+                {
+                    "primary_strategy": strategy,
+                    "count": count,
+                    "share": round(count / total_friend_turns, 4)
+                    if total_friend_turns
+                    else 0.0,
+                    "percentage": round((count / total_friend_turns) * 100, 2)
+                    if total_friend_turns
+                    else 0.0,
+                }
+            )
+
+        turn_position_structure_share = []
+        for turn_index in sorted(structure_by_turn):
+            turn_total = sum(structure_by_turn[turn_index].values())
+            for structure, count in sorted(structure_by_turn[turn_index].items()):
+                turn_position_structure_share.append(
+                    {
+                        "friend_turn_index": turn_index,
+                        "structure": structure,
+                        "count": count,
+                        "share": round(count / turn_total, 4) if turn_total else 0.0,
+                        "percentage": round((count / turn_total) * 100, 2)
+                        if turn_total
+                        else 0.0,
+                    }
+                )
+
+        turn_position_strategy_share = []
+        for turn_index in sorted(strategy_by_turn):
+            turn_total = sum(strategy_by_turn[turn_index].values())
+            for strategy, count in sorted(strategy_by_turn[turn_index].items()):
+                turn_position_strategy_share.append(
+                    {
+                        "friend_turn_index": turn_index,
+                        "primary_strategy": strategy,
+                        "count": count,
+                        "share": round(count / turn_total, 4) if turn_total else 0.0,
+                        "percentage": round((count / turn_total) * 100, 2)
+                        if turn_total
+                        else 0.0,
+                    }
+                )
+
+        run_summary = {
+            "run_id": run_dir.name,
+            "conversation_count": len(conversation_rows),
+            "friend_turn_count": total_friend_turns,
+            "average_same_primary_strategy_percentage": round(
+                sum(same_strategy_percentages) / len(same_strategy_percentages), 2
+            )
+            if same_strategy_percentages
+            else 0.0,
+            "overall_strategy_share": overall_strategy_share,
+            "turn_position_structure_share": turn_position_structure_share,
+            "turn_position_strategy_share": turn_position_strategy_share,
+        }
+
+        return {
+            "summary": run_summary,
+            "conversation_rows": conversation_rows,
+            "per_turn_rows": per_turn_rows,
+        }
 
     def load_run_config(run_dir):
         path = run_dir / "config" / "run-config.json"
@@ -110,11 +218,6 @@ def _(
         friend_agent = config.get("friend_agent", "unknown_friend")
         tagger = config.get("tagger", "unknown_tagger")
         return f"{run_dir.name} | {friend_agent} | {tagger}"
-
-    def instantiate_tagger(tagger_key):
-        if tagger_key == "heuristic_tagger":
-            return HeuristicTurnTagger()
-        return OpenAITurnTagger()
 
     def clip_text(text, limit=220):
         compact = " ".join(str(text).split())
@@ -280,78 +383,21 @@ def _(
             "most_switching": pack(switching),
         }
 
-    def write_exports(run_dir, payload):
-        export_dir = run_dir / "reports" / EXPORT_DIRNAME
-        export_dir.mkdir(parents=True, exist_ok=True)
-
-        (export_dir / "overview.json").write_text(
-            json.dumps(payload, indent=2) + "\n",
-            encoding="utf-8",
-        )
-
-        lines = [
-            f"# Notebook Review for {payload['run_id']}",
-            "",
-            "## Summary",
-            f"- Conversations: {payload['summary']['conversation_count']}",
-            f"- Friend turns: {payload['summary']['friend_turn_count']}",
-            f"- Avg same primary strategy (%): {payload['summary']['average_same_primary_strategy_percentage']}",
-            f"- Strategy entropy: {payload['comparison_metrics']['strategy_entropy']}",
-            f"- Mean unique primary strategies: {payload['comparison_metrics']['mean_unique_primary_strategies']}",
-            "",
-            "## Qualitative Highlights",
-        ]
-        for label, key in [
-            ("Most diverse", "most_diverse"),
-            ("Most monotonic", "most_monotonic"),
-            ("Most switching", "most_switching"),
-        ]:
-            insight = payload["qualitative_insights"].get(key, {})
-            if not insight:
-                continue
-            lines.extend(
-                [
-                    f"### {label}",
-                    f"- Conversation: {insight['conversation_id']}",
-                    f"- Role card: {insight['role_card_id']}",
-                    f"- Scenario: {insight['scenario_type']}",
-                    f"- Same primary strategy (%): {insight['same_primary_strategy_percentage']}",
-                    f'- Victim opening quote: "{insight["opening_quote"]}"',
-                    f'- Friend quote: "{insight["friend_quote"]}"',
-                    "",
-                ]
-            )
-        (export_dir / "qualitative_report.md").write_text(
-            "\n".join(lines).strip() + "\n",
-            encoding="utf-8",
-        )
-
-        return export_dir
-
     def ensure_run_outputs(run_dir):
         config = load_run_config(run_dir)
         conversations = load_conversations(run_dir)
-        tags_dir = run_dir / "tags"
-        tags_dir.mkdir(parents=True, exist_ok=True)
-
-        tagger = instantiate_tagger(config.get("tagger", "openai_tagger"))
-        created_tag_ids = []
-        for conversation_id in sorted(conversations):
-            transcript_path = run_dir / "conversations" / f"{conversation_id}.json"
-            tag_path = tags_dir / f"{conversation_id}.tags.json"
-            if not tag_path.is_file():
-                tag_transcript_file(transcript_path, tag_path, tagger)
-                created_tag_ids.append(conversation_id)
-
-        summary = analyze_run(run_dir)
-        role_cards = load_role_cards(run_dir)
         tags = load_tags(run_dir)
-        conversation_df = pd.DataFrame(
-            load_jsonl(run_dir / "tables" / "conversation_metrics.jsonl")
-        )
-        turn_df = pd.DataFrame(
-            load_jsonl(run_dir / "tables" / "friend_turn_tags.jsonl")
-        )
+        missing_tag_ids = sorted(set(conversations) - set(tags))
+        if missing_tag_ids:
+            raise FileNotFoundError(
+                f"Missing tag files for run {run_dir.name}: {', '.join(missing_tag_ids)}"
+            )
+
+        analysis = analyze_run(run_dir)
+        summary = analysis["summary"]
+        role_cards = load_role_cards(run_dir)
+        conversation_df = pd.DataFrame(analysis["conversation_rows"])
+        turn_df = pd.DataFrame(analysis["per_turn_rows"])
         conversation_df = enrich_conversation_metrics(conversation_df, turn_df)
         overall_strategy_df = pd.DataFrame(summary.get("overall_strategy_share", []))
         turn_strategy_df = pd.DataFrame(summary.get("turn_position_strategy_share", []))
@@ -402,18 +448,6 @@ def _(
         qualitative_insights = build_qualitative_insights(
             conversation_df, conversations, role_cards
         )
-        payload = {
-            "run_id": run_dir.name,
-            "generated_at": datetime.now(timezone.utc)
-            .replace(microsecond=0)
-            .isoformat()
-            .replace("+00:00", "Z"),
-            "created_tags": created_tag_ids,
-            "summary": summary,
-            "comparison_metrics": comparison_metrics,
-            "qualitative_insights": qualitative_insights,
-        }
-        export_dir = write_exports(run_dir, payload)
 
         return {
             "run_dir": run_dir,
@@ -428,8 +462,6 @@ def _(
             "turn_strategy_df": turn_strategy_df,
             "comparison_metrics": comparison_metrics,
             "qualitative_insights": qualitative_insights,
-            "created_tag_ids": created_tag_ids,
-            "export_dir": export_dir,
         }
 
     def render_role_card(role_card):
@@ -533,9 +565,8 @@ def _(build_run_label, list_run_dirs):
     run_options = {build_run_label(run_dir): run_dir.name for run_dir in run_dirs}
     if not run_options:
         run_options = {"No runs found under final_runs/": ""}
-    run_dir_by_id = {run_dir.name: run_dir for run_dir in run_dirs}
     default_run_id = run_dirs[0].name if run_dirs else ""
-    return default_run_id, run_dir_by_id, run_dirs, run_options
+    return default_run_id, run_dirs, run_options
 
 
 @app.cell
@@ -549,49 +580,49 @@ def _(RUN_DISPLAY_ORDER, ensure_run_outputs, friendly_run_name, run_dirs):
 
 @app.cell
 def _(default_run_id, mo, run_options):
-    available_run_ids = [run_id for run_id in run_options.values() if run_id]
     dropdown_options = {run_id: label for label, run_id in run_options.items()}
     run_selector = mo.ui.dropdown(
         options=dropdown_options, value=default_run_id, label="Primary run"
-    )
-    comparison_selector = mo.ui.multiselect(
-        options=dropdown_options,
-        value=available_run_ids[:1],
-        label="Runs to compare",
     )
     controls = mo.vstack(
         [
             mo.md("## Run Selection"),
             mo.md(
-                "The notebook expects per-run workspaces under `final_runs/<run_id>/`. It will create missing `tags/`, regenerate `tables/`, refresh `reports/summary.json`, and save notebook-specific outputs under `reports/notebook_review/`."
+                "The notebook expects exactly three runs under `final_runs/<run_id>/` with fully populated `tags/`. It compares those three runs automatically and uses this dropdown only for the detailed single-run view."
             ),
             run_selector,
-            comparison_selector,
         ]
     )
     controls
-    return comparison_selector, run_selector
+    return (run_selector,)
 
 
 @app.cell
-def _(ensure_run_outputs, run_dir_by_id, run_selector):
+def _(all_bundles, run_selector):
     selected_run_id = run_selector.value
     if selected_run_id and " | " in selected_run_id:
         selected_run_id = selected_run_id.split(" | ")[0]
-
-    primary_bundle = (
-        ensure_run_outputs(run_dir_by_id[selected_run_id])
-        if selected_run_id and selected_run_id in run_dir_by_id
-        else None
+    primary_bundle = next(
+        (bundle for bundle in all_bundles if bundle["run_dir"].name == selected_run_id),
+        all_bundles[0] if all_bundles else None,
     )
-    return primary_bundle, selected_run_id
+    return (primary_bundle,)
 
 
 @app.cell
-def _(mo, primary_bundle):
+def _(FINAL_RUNS_ROOT, mo, primary_bundle):
+    ls_output = (
+        "\n".join(sorted(path.name for path in FINAL_RUNS_ROOT.iterdir()))
+        if FINAL_RUNS_ROOT.is_dir()
+        else "<missing>"
+    )
     header = (
         mo.md(
-            "# Final Run Review\nNo runs found under `final_runs/` yet. Add a workspace at `final_runs/<run_id>/`."
+            "# Final Run Review\n"
+            "```\n"
+            f"$ ls final_runs\n{ls_output}\n"
+            "```\n"
+            "No runs found under `final_runs/` yet. Add a workspace at `final_runs/<run_id>/`."
         )
         if primary_bundle is None
         else mo.vstack(
@@ -599,8 +630,7 @@ def _(mo, primary_bundle):
                 mo.md(f"# Final Run Review: `{primary_bundle['run_dir'].name}`"),
                 mo.md(
                     f"Friend agent: `{primary_bundle['comparison_metrics']['friend_agent']}`\n"
-                    f"Tagger: `{primary_bundle['comparison_metrics']['tagger']}`\n"
-                    f"Notebook exports: `{primary_bundle['export_dir']}`"
+                    f"Tagger: `{primary_bundle['comparison_metrics']['tagger']}`"
                 ),
             ]
         )
@@ -617,9 +647,7 @@ def _(mo, primary_bundle):
         else mo.md(
             "## Processing Status\n"
             f"- Conversations found: `{len(primary_bundle['conversations'])}`\n"
-            f"- Tags created in this notebook pass: `{len(primary_bundle['created_tag_ids'])}`\n"
-            f"- Newly tagged conversations: `{', '.join(primary_bundle['created_tag_ids']) or 'none'}`\n"
-            f"- Notebook report directory: `{primary_bundle['export_dir']}`"
+            f"- Tagged conversations loaded: `{len(primary_bundle['tags'])}`"
         )
     )
     body
@@ -644,10 +672,9 @@ def _(all_bundles, alt, friendly_run_name, group_strategy, mo, pd):
             [(s, r) for s in _all_strategies for r in _all_runs],
             columns=["primary_strategy", "run"],
         )
-        _combined = (
-            _grid.merge(_combined, on=["primary_strategy", "run"], how="left")
-            .fillna({"count": 0, "percentage": 0.0})
-        )
+        _combined = _grid.merge(
+            _combined, on=["primary_strategy", "run"], how="left"
+        ).fillna({"count": 0, "percentage": 0.0})
         _individual_chart = (
             alt.Chart(_combined)
             .mark_bar()
@@ -724,9 +751,9 @@ def _(all_bundles, alt, friendly_run_name, mo, pd):
             )
         _row_size = 3
         _rows = [
-            alt.hconcat(*_charts[i : i + _row_size]).resolve_scale(
-                color="independent"
-            ).resolve_legend(color="independent")
+            alt.hconcat(*_charts[i : i + _row_size])
+            .resolve_scale(color="independent")
+            .resolve_legend(color="independent")
             for i in range(0, len(_charts), _row_size)
         ]
         by_turn = mo.vstack(
@@ -903,34 +930,12 @@ def _(mo, render_conversation, selected_conversation, selected_tag_payload):
 
 
 @app.cell
-def _(
-    comparison_selector,
-    ensure_run_outputs,
-    primary_bundle,
-    run_dir_by_id,
-    selected_run_id,
-):
-    comparison_bundles = []
-    if primary_bundle is not None:
-        for run_label in comparison_selector.value:
-            # Extract the raw run_id from the formatted label
-            run_id = run_label.split(" | ")[0]
-            if run_id in run_dir_by_id:
-                if run_id == selected_run_id:
-                    comparison_bundles.append(primary_bundle)
-                else:
-                    comparison_bundles.append(ensure_run_outputs(run_dir_by_id[run_id]))
-            # else: skip if run_id not found
-    return (comparison_bundles,)
-
-
-@app.cell
-def _(comparison_bundles, pd):
+def _(all_bundles, pd):
     comparison_df = (
         pd.DataFrame()
-        if not comparison_bundles
+        if not all_bundles
         else pd.DataFrame(
-            [bundle["comparison_metrics"] for bundle in comparison_bundles]
+            [bundle["comparison_metrics"] for bundle in all_bundles]
         ).sort_values(
             [
                 "diversity_score",
